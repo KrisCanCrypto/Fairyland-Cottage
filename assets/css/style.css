@@ -21,6 +21,8 @@
 
 body {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   font-family: 'Josefin Slab', serif;
   letter-spacing: 1px;
   color: var(--font-color1);
@@ -55,6 +57,7 @@ header img {
   width: 90vw;
   max-width: 50px;
   max-height: 50px;
+  box-shadow: 0px 2px 2px 0 rgba(255, 255, 255, 0.5), 0px -2px 2px 0 rgba(255, 255, 255, 0.5)
 }
 
 header a {
@@ -63,7 +66,7 @@ header a {
 }
 
 #title {
-  font-weight: 400;
+  font-weight: 500;
   margin-top: 20px;
   font-size: 1.5rem;
   text-align: center;
@@ -81,7 +84,7 @@ header a {
   top: 100%;
 }
 
-#nav-toggle:checked ~ nav {
+#nav-toggle:checked~nav {
   display: block;
 }
 
@@ -102,8 +105,28 @@ header a {
 #menu-bar ul li {
   margin-top: 5px;
 }
+
 #menu-bar ul li:hover {
   color: var(--font-color2);
   text-decoration: underline;
   cursor: pointer;
+}
+
+/* Main */
+main {
+  /* Make main element take up surplus to push footer down */
+  flex: 1 0 auto;
+  margin-top: 170px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Footer */
+#social-links {
+  background-color: var(--main-color);
+  text-align: center;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-evenly;
+  list-style-type: none;
 }
