@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root {
+  --main-color: ;
+  --font-color: #41462d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Josefin Slab', serif;
+  letter-spacing: 1px;
+}
+
+h1 {
+  color: var(--font-color);
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  font-weight: 300;
+}
