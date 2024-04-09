@@ -44,7 +44,17 @@ header {
   justify-content: center;
   flex-direction: column;
   background-color: var(--main-color);
-  box-shadow: 0 2px 2px var(--font-color1);
+  box-shadow: 0 1px 1px var(--font-color1);
+}
+
+header img {
+  margin-top: 15px;
+  width: 100%;
+  border-radius: 50%;
+  height: 90vw;
+  width: 90vw;
+  max-width: 50px;
+  max-height: 50px;
 }
 
 header a {
@@ -65,7 +75,7 @@ header a {
   position: absolute;
   background-color: var(--main-color);
   width: 100%;
-  box-shadow: 0 2px 2px var(--font-color1);
+  box-shadow: 0 1px 1px var(--font-color1);
   padding: 0 1rem;
   display: none;
   top: 100%;
@@ -91,4 +101,9 @@ header a {
 
 #menu-bar ul li {
   margin-top: 5px;
+}
+#menu-bar ul li:hover {
+  color: var(--font-color2);
+  text-decoration: underline;
+  cursor: pointer;
 }
