@@ -1,10 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
+/*Website colors*/
 :root {
-  --main-color: ;
-  --font-color: #41462d;
+  /* color: Timberwolf */
+  --main-color: #ded5cd;
+  /* color: Linen */
+  --secondary-color: ##f3eae2;
+  /* color: Dark moss-green */
+  --font-color1: #41462d;
+  /* color: Sage */
+  --font-color2: #a1a288;
 }
 
+/*Generic styling */
 * {
   margin: 0;
   padding: 0;
@@ -12,13 +20,75 @@
 }
 
 body {
+  min-height: 100vh;
   font-family: 'Josefin Slab', serif;
   letter-spacing: 1px;
+  color: var(--font-color1);
+  background-color: var(--secondary-color);
 }
 
-h1 {
-  color: var(--font-color);
+h1,
+h2,
+h3 {
   text-transform: uppercase;
   letter-spacing: 10px;
-  font-weight: 300;
+}
+
+/* Header styles */
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--main-color);
+  box-shadow: 0 2px 2px var(--font-color1);
+}
+
+header a {
+  text-decoration: none !important;
+  color: inherit;
+}
+
+#title {
+  font-weight: 400;
+  margin-top: 20px;
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 30px;
+}
+
+/* Nav bar */
+#menu-bar {
+  position: absolute;
+  background-color: var(--main-color);
+  width: 100%;
+  box-shadow: 0 2px 2px var(--font-color1);
+  padding: 0 1rem;
+  display: none;
+  top: 100%;
+}
+
+#nav-toggle:checked ~ nav {
+  display: block;
+}
+
+#nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  font-size: 1.5rem;
+}
+
+#menu-bar ul {
+  text-align: center;
+  list-style-type: none;
+  margin-bottom: 5px;
+}
+
+#menu-bar ul li {
+  margin-top: 5px;
 }
