@@ -57,7 +57,8 @@ header img {
   width: 90vw;
   max-width: 50px;
   max-height: 50px;
-  box-shadow: 0px 2px 2px 0 rgba(255, 255, 255, 0.5), 0px -2px 2px 0 rgba(255, 255, 255, 0.5)
+  box-shadow: 0px 2px 2px 0 rgba(255, 255, 255, 0.5),
+    0px -2px 2px 0 rgba(255, 255, 255, 0.5);
 }
 
 header a {
@@ -84,7 +85,7 @@ header a {
   top: 100%;
 }
 
-#nav-toggle:checked~nav {
+#nav-toggle:checked ~ nav {
   display: block;
 }
 
@@ -123,10 +124,21 @@ main {
 
 /* Footer */
 #social-links {
+  border-top: 1px solid var(--font-color1);
   background-color: var(--main-color);
   text-align: center;
-  padding: 20px 0;
+  justify-content: center;
+  padding: 10px 0;
   display: flex;
   justify-content: space-evenly;
   list-style-type: none;
+}
+
+#social-links p {
+  font-size: 0.6rem;
+}
+
+#social-links i {
+  font-size: 1.8rem;
+  color: var(--font-color1);
 }
