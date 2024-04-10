@@ -81,7 +81,7 @@ header a {
   top: 100%;
 }
 
-#nav-toggle:checked ~ nav {
+#nav-toggle:checked~nav {
   display: block;
 }
 
@@ -122,11 +122,7 @@ main {
 #social-links {
   border-top: 1px solid var(--font-color1);
   background-color: var(--main-color);
-  text-align: center;
-  justify-content: center;
   padding: 10px 0;
-  display: flex;
-  justify-content: space-evenly;
   list-style-type: none;
 }
 
@@ -141,6 +137,7 @@ main {
 
 /* Media query: tablet and up (768px & up) */
 @media screen and (min-width: 768px) {
+
   /*Header*/
   nav {
     display: block;
@@ -182,6 +179,7 @@ main {
   .nav-toggle-label {
     display: none;
   }
+
   /* Main */
   main {
     margin-top: 265px;
@@ -198,5 +196,4 @@ main {
   }
 }
 
-@media screen and (min-width: 1200px) {
-}
+@media screen and (min-width: 1200px) {}
