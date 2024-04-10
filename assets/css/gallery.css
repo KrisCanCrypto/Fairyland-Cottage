@@ -37,7 +37,7 @@ h3 {
 }
 
 /* Side bar header */
-aside {
+.side-nav {
   background-color: var(--main-color);
   position: fixed;
   right: 0;
@@ -50,7 +50,7 @@ aside {
   padding: 0 5px 0 5px;
 }
 
-aside img {
+.side-nav img {
   margin-top: 15px;
   height: 100vw;
   width: 100vw;
@@ -61,16 +61,15 @@ aside img {
 
 /* Nav bar */
 #menu-bar {
-  position: absolute;
+  /* position: absolute; */
   background-color: var(--main-color);
   width: 100%;
-  box-shadow: 0 1px 1px var(--font-color1);
   padding: 0 1rem;
   display: none;
   top: 100%;
 }
 
-#nav-toggle:checked ~ nav {
+#nav-toggle:checked~nav {
   display: block;
 }
 
@@ -97,6 +96,7 @@ aside img {
   text-decoration: underline;
   cursor: pointer;
 }
+
 /* Social links */
 #social-links {
   text-align: center;
