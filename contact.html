@@ -10,8 +10,7 @@
   <title>Fairyland Cottage - Contact</title>
 
   <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="stylesheet" href="assets/css/contactus.css">
-
+  <link rel="stylesheet" href="assets/css/contact.css" />
 
   <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
@@ -73,27 +72,27 @@
   <!-- main content -->
   <main>
     <section id="contact">
-      <h2><i class="fa-solid fa-leaf fa-flip-horizontal"></i> get in touch <i class="fa-solid fa-leaf"></i></h2>
+      <h2>
+        <i class="fa-solid fa-leaf fa-flip-horizontal"></i> say hello<i class="fa-solid fa-leaf"></i>
+      </h2>
       <p>I’d love to hear from you!</p>
       <form action="POST" id="contact-form">
         <p>
           First Name:
-          <input type="text" id="first-name" placeholder="Joe" class="text-input" required /><br />
+          <input type="text" id="first-name" placeholder="Joe" class="text-input" required />
         </p>
         <p>
           Last Name:
-          <input type="text" id="last-name" placeholder="Blogs" class="text-input" required /><br />
+          <input type="text" id="last-name" placeholder="Blogs" class="text-input" required />
         </p>
         <p>
           Email Address:
-          <input type="email" id="email-address" placeholder="joeblogs@email.com" class="text-input" required /><br />
+          <input type="email" id="email-address" placeholder="joeblogs@email.com" class="text-input" required />
         </p>
         <p>
           Subject:
-          <input type="text" id="subject" placeholder="Subject" class="text-input" required /><br />
+          <textarea name="subject" id="question" cols="25" rows="7" placeholder="Type your message..."></textarea>
         </p>
-        <p></p>
-        <textarea name="subject" id="question" cols="30" rows="10" placeholder="Type your message here..."></textarea>
       </form>
     </section>
   </main>
