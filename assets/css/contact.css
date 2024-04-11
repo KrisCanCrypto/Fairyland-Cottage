@@ -10,6 +10,8 @@
   --font-color2: #e9ead6;
 }
 
+
+
 #contact {
   position: absolute;
   top: 30px;
@@ -87,21 +89,40 @@
 /* Media query: tablet and up (768px & up) */
 @media screen and (min-width: 768px) {
 
-  /* Contact form */
-  #contact {
-    left: -50%;
-    right: -50%;
-    top: 230px;
-    border-radius: 10px;
-    max-width: 600px;
+  /*New Image*/
+  main {
+    background: url(../images/walking.jpg) center center/cover;
+    width: 100%;
+    height: 100vh;
+    position: relative;
   }
 
-  #contact>h2,
+  /* Contact form */
+  #contact {
+    left: -40%;
+    right: -60%;
+    top: 150px;
+    border-radius: 10px;
+    max-width: 600px;
+    padding: 20px 0 20px 0;
+  }
+
+
+  #contact>h2 {
+    font-size: 110%;
+  }
+
   #contact>p {
-    font-size: 90%;
+    font-size: 80%;
   }
 
   #contact-form>p {
     font-size: 90%;
+  }
+
+  .text-input::placeholder,
+  #question::placeholder {
+    color: rgba(233, 234, 214, 0.6);
+    font-size: 80%;
   }
 }
