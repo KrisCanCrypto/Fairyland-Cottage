@@ -37,7 +37,7 @@
 
 #contact-form {
   width: 80%;
-  margin: 40px 0 40px 0;
+  margin: 40px 10px 40px 0;
 }
 
 .text-input::placeholder,
@@ -64,6 +64,22 @@
   color: var(--font-color2);
   width: 100%;
   border: 1px solid var(--main-color);
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 5px 5px;
+}
+
+.send-button {
+  width: 100%;
+  color: var(--font-color1);
+  background-color: var(--main-color);
+  font-size: 80%;
+  padding: 7px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.send-button:hover {
+  color: var(--main-color);
+  background-color: var(--font-color1);
 }
