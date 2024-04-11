@@ -83,3 +83,25 @@
   color: var(--main-color);
   background-color: var(--font-color1);
 }
+
+/* Media query: tablet and up (768px & up) */
+@media screen and (min-width: 768px) {
+
+  /* Contact form */
+  #contact {
+    left: -50%;
+    right: -50%;
+    top: 230px;
+    border-radius: 10px;
+    max-width: 600px;
+  }
+
+  #contact>h2,
+  #contact>p {
+    font-size: 90%;
+  }
+
+  #contact-form>p {
+    font-size: 90%;
+  }
+}
