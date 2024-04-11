@@ -1,13 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+#contact {
+  width: 80%;
+}
 
-/*Website colors*/
-:root {
-  /* color: Timberwolf */
-  --main-color: #ded5cd;
-  /* color: Linen */
-  --secondary-color: ##f3eae2;
-  /* color: Dark moss-green */
-  --font-color1: #41462d;
-  /* color: Sage */
-  --font-color2: #a1a288;
+#contact h2 {
+  font-size: 80%;
+  text-align: center;
+}
+
+#contact p {
+  margin-top: 1ch;
+  font-size: 80%;
+  text-align: center;
 }
