@@ -131,12 +131,14 @@ h3 {
   padding: 10px 0;
   flex-direction: column;
   list-style-type: none;
+  overflow: scroll;
 }
 
 #social-links i {
-  margin-top: 20px;
+  margin-top: 1px;
   font-size: 1.8rem;
   color: var(--font-color1);
+  padding-bottom: 15px;
 }
 
 /* Main */
@@ -247,7 +249,7 @@ footer {
   }
 
   #menu-bar2 ul li {
-    margin: 20px 20px;
+    margin: 20px 20px 10px;
   }
 
   #menu-bar2 ul li:hover {

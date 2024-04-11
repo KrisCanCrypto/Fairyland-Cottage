@@ -13,7 +13,7 @@
 main {
   background: url(../images/fieldwalk.jpg) center center/cover;
   width: 100%;
-  min-height: 770px;
+  min-height: 1000px;
   position: relative;
 
 }
@@ -21,7 +21,7 @@ main {
 /*contact form*/
 #contact {
   position: absolute;
-  top: 40px;
+  top: 50px;
   width: 70%;
   margin: auto;
   display: flex;
