@@ -10,11 +10,17 @@
   --font-color2: #e9ead6;
 }
 
+main {
+  background: url(../images/fieldwalk.jpg) center center/cover;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
 
-
+/*contact form*/
 #contact {
   position: absolute;
-  top: 30px;
+  top: 40px;
   width: 70%;
   margin: auto;
   display: flex;
@@ -23,6 +29,7 @@
   background-color: rgba(65, 70, 45, 0.7);
   color: var(--font-color2);
   border-radius: 0 50px 50px 0;
+  padding: 20px 0 20px 0;
 }
 
 #contact>h2 {
@@ -44,7 +51,7 @@
 
 .text-input::placeholder,
 #question::placeholder {
-  color: var(--font-color1);
+  color: rgba(233, 234, 214, 0.6);
   font-size: 80%;
 }
 
@@ -101,10 +108,9 @@
   #contact {
     left: -40%;
     right: -60%;
-    top: 150px;
+    top: 130px;
     border-radius: 10px;
     max-width: 600px;
-    padding: 20px 0 20px 0;
   }
 
 
@@ -122,7 +128,7 @@
 
   .text-input::placeholder,
   #question::placeholder {
-    color: rgba(233, 234, 214, 0.6);
+
     font-size: 80%;
   }
 }
