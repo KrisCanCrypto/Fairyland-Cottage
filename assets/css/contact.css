@@ -129,7 +129,6 @@ main {
 
   .text-input::placeholder,
   #question::placeholder {
-
     font-size: 80%;
   }
 }
