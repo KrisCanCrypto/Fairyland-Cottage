@@ -179,6 +179,15 @@ h3 {
   line-height: 150%;
 }
 
+/* Sections information */
+.sections {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+#welcome {}
+
 /* Footer */
 footer {
   display: none;
