@@ -183,10 +183,39 @@ h3 {
 .sections {
   display: flex;
   flex-direction: column;
-  width: 90%;
+  width: 75%;
+  margin-top: 50px;
+  justify-content: center;
 }
 
-#welcome {}
+.sections hr {
+  width: 75%;
+  height: 2px;
+}
+
+#welcome,
+#ethos {
+  text-align: justify;
+  position: relative;
+  left: 15px;
+}
+
+#welcome h2,
+#ethos h2 {
+  font-size: 90%;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+#welcome p,
+#ethos p {
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+#ethos p {
+  padding-bottom: 20px;
+}
 
 /* Footer */
 footer {
