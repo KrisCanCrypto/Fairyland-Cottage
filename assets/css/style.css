@@ -146,8 +146,19 @@ h3 {
   display: none;
 }
 
+#big-hero {
+  display: none;
+}
+
 #hero-img {
   background: url(../images/smallscreen.jpg) center center/cover;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+#big-hero {
+  background: url(../images/house.jpg) center center/cover;
   width: 100%;
   height: 100vh;
   position: relative;
@@ -191,12 +202,6 @@ h3 {
   margin: 10px 0 10px 0;
 }
 
-#ethos {
-  padding-top: 20px;
-  background-color: var(--font-color1);
-  color: var(--font-color2);
-}
-
 #welcome h2,
 #ethos h2 {
   margin-top: 70px;
@@ -211,6 +216,12 @@ h3 {
   padding-bottom: 50px;
   line-height: 120%;
   font-size: 85%;
+}
+
+#ethos {
+  padding-top: 20px;
+  background-color: var(--font-color1);
+  color: var(--font-color2);
 }
 
 /* Footer */
@@ -230,11 +241,6 @@ footer {
     display: block;
   }
 
-  footer {
-    display: block;
-  }
-
-  /* Header styles */
   .top-header {
     position: fixed;
     width: 100%;
@@ -298,18 +304,45 @@ footer {
   }
 
   /* Main */
+  #hero-img {
+    display: none;
+  }
+
+  #big-hero {
+    display: block;
+  }
 
   main {
-    position: block;
-    right: 0;
     /* Make main element take up surplus & push footer down */
     flex: 1 0 auto;
-    margin-top: 170px;
+    margin-top: 210px;
     display: flex;
     flex-direction: column;
   }
 
+  /* Sections information*/
+  .main-sections {
+    max-width: 700px;
+    padding-right: 0;
+  }
+
+  #welcome h2,
+  #ethos h2 {
+    font-size: 130%;
+    text-align: left;
+  }
+
+  #welcome p,
+  #ethos p {
+    font-size: 120%;
+    margin: 50px 0;
+  }
+
   /* Footer */
+  footer {
+    display: block;
+  }
+
   #social-links2 {
     display: flex;
     flex-direction: row;
@@ -322,9 +355,8 @@ footer {
     list-style-type: none;
   }
 
-
   #social-links2 p {
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 
   #social-links2 i {
