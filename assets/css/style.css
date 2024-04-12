@@ -142,6 +142,11 @@ h3 {
 }
 
 /* Main */
+
+.hidden-title {
+  display: none;
+}
+
 #hero-img {
   background: url(../images/smallscreen.jpg) center center/cover;
   width: 100%;
