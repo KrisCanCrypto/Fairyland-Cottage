@@ -213,6 +213,7 @@ h3 {
 
 #welcome p,
 #ethos p {
+  font-weight: 200;
   padding-bottom: 50px;
   line-height: 120%;
   font-size: 85%;
@@ -221,7 +222,7 @@ h3 {
 #ethos {
   padding-top: 20px;
   background-color: var(--font-color1);
-  color: var(--font-color2);
+  color: var(--secondary-color);
 }
 
 /* Footer */
@@ -312,6 +313,17 @@ footer {
     display: block;
   }
 
+  #intro-text2 p {
+    font-weight: 200;
+    position: absolute;
+    top: 36%;
+    left: 41%;
+    margin-top: 30px;
+    padding: 15px;
+    line-height: 150%;
+    font-size: 1.3rem;
+  }
+
   main {
     /* Make main element take up surplus & push footer down */
     flex: 1 0 auto;
@@ -326,15 +338,20 @@ footer {
     padding-right: 0;
   }
 
+  #welcome,
+  #ethos {
+    margin-top: 30px;
+  }
+
   #welcome h2,
   #ethos h2 {
-    font-size: 130%;
+    font-size: 125%;
     text-align: left;
   }
 
   #welcome p,
   #ethos p {
-    font-size: 120%;
+    font-size: 115%;
     margin: 50px 0;
   }
 
