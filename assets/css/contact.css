@@ -11,7 +11,7 @@
 }
 
 main {
-  background: url(../images/fieldwalk.jpg) center center/cover;
+  background: url(../images/fieldwalk.webp) center center/cover;
   width: 100%;
   min-height: 1000px;
   position: relative;
@@ -99,7 +99,7 @@ main {
 
   /*New Image*/
   main {
-    background: url(../images/walking.jpg) center center/cover;
+    background: url(../images/walking.webp) center center/cover;
     width: 100%;
     height: 100vh;
     position: relative;
