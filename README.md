@@ -6,14 +6,28 @@
 
 This project website is a resource for individuals interested in living a simple and sustainable lifestyle. It offers a variety of information on topics such as healthy recipes, homemade natural products, DIY projects, and zero waste living. Whether you are a seasoned follower of the _Fairyland Cottage_ or a newcomer looking to learn more, this website provides valuable insights and inspiration for anyone interested in simplifying their life.
 
-### User Story
+![alt text](assets/images/visualdisplay.webp)
+
+## Table of Contents
+
+1. [User Stories](#user-stories)
+2. [Visual Design](#visual-design)
+3. [Features](#features)
+4. [Technologies](#technologies)
+5. [Manual Testing](#manual-testing)
+6. [Deployment](#deployment)
+7. [Credits](#credits)
+8. [Author](#author)
+<hr>
+
+### [User Stories](#user-stories)
 
 I wanted a website for users old and new to able explore the world of _Fairyland Cottage_ without having to go to different sites / apps. If they wish to see more they have the option through our links provided.
 On the home page we give a warming welcome note and a insight into simply living. This allows the new user to get a strong understanding of what information is available.
 
-![alt text](assets/images/visualdisplay.webp)
+## [Visual Design](#visual-design)
 
-## Features
+## [Features](#features)
 
 - ### Navbar
 
@@ -29,9 +43,18 @@ On the home page we give a warming welcome note and a insight into simply living
 - ### Image gallery
 - ### Contact page
 
-## Manual Testing
+## [Technologies](#technologies)
 
-## Deployment
+## Languages
+
+- [HTML](https://www.w3schools.com/html/)
+  - Website markup.
+- [CSS](https://www.w3schools.com/css/)
+  - Website Styling.
+
+## [Manual Testing](#manual-testing)
+
+## [Deployment](#deployment)
 
 This project is deployed using GitHub Pages. This section provides information on how to deploy & as a reference for future deployments.
 
@@ -57,9 +80,9 @@ To access click on the link and visit [Fairyland Cottage](https://terryloc.githu
 6. Under the GitHub Pages section, choose the main branch as the source and save the changes.
 7. Your site will be published and accessible at `https://your-username.github.io/Fairyland-Cottage/`.
 
-## Credits
+## [Credits](#credits)
 
-## Author
+## [Author](#author)
 
 - [@TerryLoc](https://github.com/TerryLoc)
 
