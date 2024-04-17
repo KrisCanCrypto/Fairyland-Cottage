@@ -18,9 +18,10 @@ This project website is a resource for individuals interested in living a simple
 6. [Deployment](#deployment)
 7. [Credits](#credits)
 8. [Author](#author)
+
 <hr>
 
-### [User Stories](#user-stories)
+## [User Stories](#user-stories)
 
 I wanted a website for users old and new to able explore the world of _Fairyland Cottage_ without having to go to different sites / apps. If they wish to see more they have the option through our links provided.
 On the home page we give a warming welcome note and a insight into simply living. This allows the new user to get a strong understanding of what information is available.
@@ -45,12 +46,17 @@ On the home page we give a warming welcome note and a insight into simply living
 
 ## [Technologies](#technologies)
 
-## Languages
+- ### Languages
 
-- [HTML](https://www.w3schools.com/html/)
-  - Website markup.
-- [CSS](https://www.w3schools.com/css/)
-  - Website Styling.
+  [HTML](https://www.w3schools.com/html/) - Website markup.<br>
+  [CSS](https://www.w3schools.com/css/) - Website Styling.
+
+- ### Platforms
+
+  [Github](https://github.com/) -Remote code storage and deployment of site.<br>
+  [VS Code](https://code.visualstudio.com/) - IDE for code editing / project development.
+
+- ### Other Tools
 
 ## [Manual Testing](#manual-testing)
 
