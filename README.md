@@ -6,7 +6,7 @@
 
 This project website is a resource for individuals interested in living a simple and sustainable lifestyle. It offers a variety of information on topics such as healthy recipes, homemade natural products, DIY projects, and zero waste living. Whether you are a seasoned follower of the _Fairyland Cottage_ or a newcomer looking to learn more, this website provides valuable insights and inspiration for anyone interested in simplifying their life.
 
-![alt text](assets/images/visualdisplay.webp)
+<img src="assets/images/visualdisplay.webp" alt="appearance" height="250"/>
 
 ## Table of Contents
 
@@ -28,17 +28,40 @@ On the home page we give a warming welcome note and a insight into simply living
 
 ## [Visual Design](#visual-design)
 
+### Wireframes
+
+- Small Screen / Mobile
+
+  | Visual idea                                                                                   | Page         |
+  | --------------------------------------------------------------------------------------------- | ------------ |
+  | <img src="assets/images/wireframes/home-smalldevices.webp" alt="appearance" height="250"/>    | Landing page |
+  | <img src="assets/images/wireframes/expanded-sidebar.webp" alt="appearance" height="250"/>     | Side bar     |
+  | <img src="assets/images/wireframes/images-smalldevices.webp" alt="appearance" height="250"/>  | Gallery page |
+  | <img src="assets/images/wireframes/videos-smalldevices.webp" alt="appearance" height="250"/>  | Videos       |
+  | <img src="assets/images/wireframes/contact-smalldevices.webp" alt="appearance" height="250"/> | Contact Us   |
+
+  <hr>
+
+- Screen sizes 768px and up
+
+  | Visual idea                                                                     | Page         |
+  | ------------------------------------------------------------------------------- | ------------ |
+  | <img src="assets/images/wireframes/home.jpg" alt="appearance" height="250"/>    | Landing page |
+  | <img src="assets/images/wireframes/gallery.jpg" alt="appearance" height="250"/> | Gallery page |
+  | <img src="assets/images/wireframes/video.jpg" alt="appearance" height="250"/>   | Videos       |
+  | <img src="assets/images/wireframes/contact.jpg" alt="appearance" height="250"/> | Contact Us   |
+
 ## [Features](#features)
 
 - ### Navbar
 
   The navbar for 768px & up is simple, clean and minimal. Containing links to each page while also the img logo returns the user to the home page at any point.
 
-  ![alt text](assets/images/navbar-768px.webp)
+  ![alt img](assets/images/navbar-768px.webp)
 
   The navbar for small devices, such as mobiles, transitions to a side bar to offer more screen real estate. This also toggles the page links by clicking the 3 dots ... As there is no footer on the small screens I have added the social links as part of the side bar. <br>
 
-  ![alt text](assets/images/navbar-toggleoff.webp) ![alt text](assets/images/navbar-toggleon.webp)
+  ![alt img](assets/images/navbar-toggleoff.webp) ![alt img](assets/images/navbar-toggleon.webp)
 
 - ### Videos page
 - ### Image gallery
