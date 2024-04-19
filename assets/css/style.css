@@ -188,6 +188,7 @@ h3 {
 }
 
 #intro-text p {
+  font-size: 1.1rem;
   margin-top: 15px;
   text-align: left;
   line-height: 150%;
@@ -219,7 +220,7 @@ hr {
 #ethos p {
   padding-bottom: 50px;
   line-height: 120%;
-  font-size: 85%;
+  font-size: 1.1rem;
 }
 
 #ethos {

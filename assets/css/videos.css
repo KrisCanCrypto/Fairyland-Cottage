@@ -38,6 +38,7 @@
   padding-top: 30px;
   text-align: justify;
   max-width: 350px;
+  line-height: 120%;
 }
 
 
@@ -66,3 +67,5 @@
 .middle>.container .video {
   border: 1px solid var(--font-color1);
 }
+
+@media screen and (min-width: 768px) {}
