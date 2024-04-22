@@ -76,7 +76,7 @@ On the home page we give a warming welcome note and a insight into simply living
 
   The font that I chose for the full site is [Josefin Slab](https://fonts.google.com/?query=Josefin+Slab). The reasoning behind this choice is to keep in form with the original font used for the existing [Fairyland Cottage website](https://www.fairylandcottage.com/) where Papyrus was the main font. Unfortunately google fonts did not offer this option, so I found a good [blog](https://appsthatdeliver.com/app-tutorials/google-docs/papyrus-font-google-docs/) that offered alternative fonts that held a similarity to the font design Papyrus.
 
-  I wanted old users to feel that they where still in the world of Fairyland while new users where greeted with the organic earthly feel Josefin Slab offers while reading and browsing through the site.
+  I aimed to create a seamless transition for returning users, evoking a sense of familiarity with the world of Fairyland, while new visitors are welcomed with the organic and earthy aesthetic of Josefin Slab font, enhancing their reading and browsing experience on the site.
 
   ### Icons
 
@@ -86,6 +86,16 @@ On the home page we give a warming welcome note and a insight into simply living
   - The icons I used are from the [Fontawesome]() Icon library using the <<i>i</i>> tag.
 
   - They are utalised is the footer on pages 768px and up. While added to the side bar on mobile devices.
+
+  ### Colors
+
+  ![Website colors](assets/images/color-pallet.webp)
+
+  - I used the site [coolors](https://coolors.co/ded5cd-f3eae2-41462d-e9ead6) to create the color pallet.
+
+  - I strive for the website to offer users a sense of rooted-ness and a strong connection to the nature.
+
+  - I selected the drab dark brown color to evoke a sense of organic connection to the earth, bridging the tones of the soil and forest greens. This choice allows it to contrast and stand out against the lighter hues present throughout the site.
 
 ## [Features](#features)
 
