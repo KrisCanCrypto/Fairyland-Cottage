@@ -52,15 +52,14 @@
 .video {
   max-width: 95%;
   margin-top: 60px;
-  border-radius: 30px;
-  padding: 3px;
+  border-radius: 20px;
+  padding: 2px;
   border: 1px solid var(--secondary-color);
-  box-shadow: 3px 3px 15px rgba(0, 00, 0, .9);
+  box-shadow: 3px 3px 15px rgba(0, 00, 0, .6);
 }
 
 .middle {
   background-color: var(--font-color1);
-  padding: 5px;
   color: var(--font-color2);
 }
 
@@ -68,4 +67,124 @@
   border: 1px solid var(--font-color1);
 }
 
-@media screen and (min-width: 768px) {}
+input {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+
+  .video-section {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .text p {
+    max-width: 600px;
+    margin-bottom: 30px;
+  }
+
+  /* Video sections */
+  .container {
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px 100px;
+    width: 100%;
+    padding: 20px;
+    margin: 20px 0;
+    overflow: hidden;
+  }
+
+  .container .video {
+    grid-column: 2/ 9;
+    grid-row: 1/ 5;
+    height: 400px;
+    width: 100%;
+    max-width: 700px;
+    transition: all 3s ease;
+  }
+
+  .video {
+    margin: 0;
+    box-shadow: 3px 3px 15px rgba(0, 00, 0, .4);
+  }
+
+  .container input {
+    display: none;
+  }
+
+  .dots {
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+  }
+
+  .dots label {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: solid var(--font-color1) 2px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin: 8px;
+  }
+
+  .middle h3 {
+    margin-top: 30px;
+  }
+
+  .middle .dots label {
+    border: solid var(--secondary-color) 2px;
+  }
+
+  .middle .dots label:hover {
+    background: var(--secondary-color);
+  }
+
+
+  .dots label:hover {
+    background: var(--font-color1);
+  }
+
+  /*  video movements */
+  #vid1:checked~.video-1 {
+    margin-left: 0;
+    z-index: 1;
+  }
+
+  #vid2:checked~.video-2 {
+    margin-left: 900px;
+  }
+
+  #vid3:checked~.video-3 {
+    margin-left: -500%;
+  }
+
+  #vid4:checked~.video-1 {
+    margin-left: 0%;
+    z-index: 1;
+  }
+
+  #vid5:checked~.video-2 {
+    margin-left: 900%;
+  }
+
+  #vid6:checked~.video-3 {
+    margin-left: -500%;
+  }
+
+  #vid7:checked~.video-1 {
+    margin-left: 0%;
+    z-index: 1;
+  }
+
+  #vid8:checked~.video-2 {
+    margin-left: 400%;
+  }
+
+  #vid9:checked~.video-3 {
+    margin-left: -500%;
+  }
+}
