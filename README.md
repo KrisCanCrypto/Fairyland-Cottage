@@ -97,6 +97,16 @@ On the home page we give a warming welcome note and a insight into simply living
 
   - I selected the drab dark brown color to evoke a sense of organic connection to the earth, bridging the tones of the soil and forest greens. This choice allows it to contrast and stand out against the lighter hues present throughout the site.
 
+  ### Images
+
+  On the **landing pages** I chose two hero images.
+
+  - The prime hero image displayed on the website with a viewport size of 768px and above features an exquisite portrayal of the cottage. This deliberate choice aims to imbue users with a sense of warmth and hospitality upon entering the enchanting realm of _Fairyland Cottage_.
+
+    <img src="assets/images/house.webp" alt="appearance" height="250" margin=" 0 auto"/>
+
+  -
+
 ## [Features](#features)
 
 - ### Navbar
