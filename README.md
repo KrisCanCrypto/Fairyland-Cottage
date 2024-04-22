@@ -6,25 +6,46 @@
 
 This project website is a resource for individuals interested in living a simple and sustainable lifestyle. It offers a variety of information on topics such as healthy recipes, homemade natural products, DIY projects, and zero waste living. Whether you are a seasoned follower of the _Fairyland Cottage_ or a newcomer looking to learn more, this website provides valuable insights and inspiration for anyone interested in simplifying their life.
 
-<img src="assets/images/visualdisplay.webp" alt="appearance" height="250"/>
+<img src="assets/images/visualdisplay.webp" alt="appearance" height="250" margin=" 0 auto"/>
 
-## Table of Contents
+## Table of Content
 
 1. [User Stories](#user-stories)
+
 2. [Visual Design](#visual-design)
+
 3. [Features](#features)
+
 4. [Technologies](#technologies)
+
 5. [Manual Testing](#manual-testing)
+
 6. [Deployment](#deployment)
+
 7. [Credits](#credits)
+
 8. [Author](#author)
 
 <hr>
 
 ## [User Stories](#user-stories)
 
+### Short Brief
+
 I wanted a website for users old and new to able explore the world of _Fairyland Cottage_ without having to go to different sites / apps. If they wish to see more they have the option through our links provided.
 On the home page we give a warming welcome note and a insight into simply living. This allows the new user to get a strong understanding of what information is available.
+
+#### Users views
+
+1. As a user, I want to easily navigate through the website to find the information I am looking for, so I can quickly access the world of _Fairyland Cottage_ resources on simple living and sustainability.
+
+2. As a newcomer to Fairyland Cottage, I want to learn more about the ethos of simple living and sustainability, so I can understand the principles and values behind the content shared on the website.
+
+3. As a user interested in zero waste living, I want to discover tips and ideas on how to reduce waste and live a more eco-friendly lifestyle, so I can make positive changes in my daily habits.
+
+4. As a fan of Fairyland Cottage, I want to stay connected with the community through social media links, so I can engage with like-minded individuals and be inspired by their stories and experiences.
+
+5. As a visitor to the website, I want to feel inspired and motivated to adopt a more sustainable lifestyle, so I can contribute to a healthier planet for future generations.
 
 ## [Visual Design](#visual-design)
 
@@ -32,24 +53,26 @@ On the home page we give a warming welcome note and a insight into simply living
 
 - Small Screen / Mobile
 
-  | Visual idea                                                                                   | Page         |
-  | --------------------------------------------------------------------------------------------- | ------------ |
-  | <img src="assets/images/wireframes/home-smalldevices.webp" alt="appearance" height="250"/>    | Landing page |
-  | <img src="assets/images/wireframes/expanded-sidebar.webp" alt="appearance" height="250"/>     | Side bar     |
+  |                                          Visual idea                                          |     Page     |
+  | :-------------------------------------------------------------------------------------------: | :----------: |
+  |  <img src="assets/images/wireframes/home-smalldevices.webp" alt="appearance" height="250"/>   | Landing page |
+  |   <img src="assets/images/wireframes/expanded-sidebar.webp" alt="appearance" height="250"/>   |   Side bar   |
   | <img src="assets/images/wireframes/images-smalldevices.webp" alt="appearance" height="250"/>  | Gallery page |
-  | <img src="assets/images/wireframes/videos-smalldevices.webp" alt="appearance" height="250"/>  | Videos       |
-  | <img src="assets/images/wireframes/contact-smalldevices.webp" alt="appearance" height="250"/> | Contact Us   |
+  | <img src="assets/images/wireframes/videos-smalldevices.webp" alt="appearance" height="250"/>  |    Videos    |
+  | <img src="assets/images/wireframes/contact-smalldevices.webp" alt="appearance" height="250"/> |  Contact Us  |
 
   <hr>
 
 - Screen sizes 768px and up
 
-  | Visual idea                                                                     | Page         |
-  | ------------------------------------------------------------------------------- | ------------ |
-  | <img src="assets/images/wireframes/home.jpg" alt="appearance" height="250"/>    | Landing page |
+  |                                   Visual idea                                   |     Page     |
+  | :-----------------------------------------------------------------------------: | :----------: |
+  |  <img src="assets/images/wireframes/home.jpg" alt="appearance" height="250"/>   | Landing page |
   | <img src="assets/images/wireframes/gallery.jpg" alt="appearance" height="250"/> | Gallery page |
-  | <img src="assets/images/wireframes/video.jpg" alt="appearance" height="250"/>   | Videos       |
-  | <img src="assets/images/wireframes/contact.jpg" alt="appearance" height="250"/> | Contact Us   |
+  |  <img src="assets/images/wireframes/video.jpg" alt="appearance" height="250"/>  |    Videos    |
+  | <img src="assets/images/wireframes/contact.jpg" alt="appearance" height="250"/> |  Contact Us  |
+
+  ### Font
 
 ## [Features](#features)
 
