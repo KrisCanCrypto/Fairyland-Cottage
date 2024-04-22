@@ -39,11 +39,11 @@ On the home page we give a warming welcome note and a insight into simply living
 
 1. As a user, I want to easily navigate through the website to find the information I am looking for, so I can quickly access the world of _Fairyland Cottage_ resources on simple living and sustainability.
 
-2. As a newcomer to Fairyland Cottage, I want to learn more about the ethos of simple living and sustainability, so I can understand the principles and values behind the content shared on the website.
+2. As a newcomer to _Fairyland Cottage_, I want to learn more about the ethos of simple living and sustainability, so I can understand the principles and values behind the content shared on the website.
 
 3. As a user interested in zero waste living, I want to discover tips and ideas on how to reduce waste and live a more eco-friendly lifestyle, so I can make positive changes in my daily habits.
 
-4. As a fan of Fairyland Cottage, I want to stay connected with the community through social media links, so I can engage with like-minded individuals and be inspired by their stories and experiences.
+4. As a fan of _Fairyland Cottage_, I want to stay connected with the community through social media links, so I can engage with like-minded individuals and be inspired by their stories and experiences.
 
 5. As a visitor to the website, I want to feel inspired and motivated to adopt a more sustainable lifestyle, so I can contribute to a healthier planet for future generations.
 
@@ -73,6 +73,10 @@ On the home page we give a warming welcome note and a insight into simply living
   | <img src="assets/images/wireframes/contact.jpg" alt="appearance" height="250"/> |  Contact Us  |
 
   ### Font
+
+  The font that I chose for the full site is [Josefin Slab](https://fonts.google.com/?query=Josefin+Slab). The reasoning behind this choice is to keep in form with the original font used for the existing [Fairyland Cottage website](https://www.fairylandcottage.com/) where Papyrus was the main font. Unfortunately google fonts did not offer this option, so I found a good [blog](https://appsthatdeliver.com/app-tutorials/google-docs/papyrus-font-google-docs/) that offered alternative fonts that held a similarity to the font design Papyrus.
+
+  I wanted old users to feel that they where still in the world of Fairyland while new users where greeted with the organic earthly feel Josefin Slab offers while reading and browsing through the site.
 
 ## [Features](#features)
 
