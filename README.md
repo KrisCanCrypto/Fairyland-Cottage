@@ -6,7 +6,7 @@
 
 This project website is a resource for individuals interested in living a simple and sustainable lifestyle. It offers a variety of information on topics such as healthy recipes, homemade natural products, DIY projects, and zero waste living. Whether you are a seasoned follower of the _Fairyland Cottage_ or a newcomer looking to learn more, this website provides valuable insights and inspiration for anyone interested in simplifying their life.
 
-<img src="assets/images/visualdisplay.webp" alt="appearance" height="250" margin=" 0 auto"/>
+<img src="assets/images/visualdisplay.webp" alt="appearance" width="500px" margin=" 0 auto"/>
 
 ## Table of Content
 
@@ -93,7 +93,7 @@ On the home page we give a warming welcome note and a insight into simply living
 
   - I used the site [coolors](https://coolors.co/ded5cd-f3eae2-41462d-e9ead6) to create the color pallet.
 
-  - I strive for the website to offer users a sense of rooted-ness and a strong connection to the nature.
+  - I strive for the website to offer users a sense of rooted-ness and a strong connection to nature.
 
   - I selected the drab dark brown color to evoke a sense of organic connection to the earth, bridging the tones of the soil and forest greens. This choice allows it to contrast and stand out against the lighter hues present throughout the site.
 
@@ -103,9 +103,27 @@ On the home page we give a warming welcome note and a insight into simply living
 
   - The prime hero image displayed on the website with a viewport size of 768px and above features an exquisite portrayal of the cottage. This deliberate choice aims to imbue users with a sense of warmth and hospitality upon entering the enchanting realm of _Fairyland Cottage_.
 
-    <img src="assets/images/house.webp" alt="appearance" height="250" margin=" 0 auto"/>
+    <img src="assets/images/house.webp" alt="hero image 768px & up" height="250" margin=" 0 auto"/>
 
-  -
+  <br>
+
+  - I selected a distinct hero image specifically tailored for mobile screens. The objective was to maintain a mystical and inviting ambiance while optimizing the vertical space available on mobile devices. The choice of a moss-filled tree with a subtle glimmer of sun rays effectively captures the desired atmosphere that aligns with the site's overall aesthetic.
+
+    <img src="assets/images/smallscreen.webp" alt="Hero image mobile" height="250" margin=" 0 auto"/>
+
+    <hr>
+
+  On the **Contact page**, the goal is to evoke a sense of closeness and connection with the user through the imagery, emphasizing the contact form as a means to facilitate this connection. By employing a technique that emphasizes the foreground over a blurred image of Niamh, these visuals are carefully curated to convey a feeling of emotional proximity and engagement.
+
+  - The **Contact page** image for 786px and up.
+
+    <img src="assets/images/walking.webp" alt="Hero image mobile" height="250" margin=" 0 auto"/>
+
+    <br>
+
+  - The **Contact page** image for mobile devices.
+
+    <img src="assets/images/fieldwalk.webp" alt="Hero image mobile" height="250" margin=" 0 auto"/>
 
 ## [Features](#features)
 
