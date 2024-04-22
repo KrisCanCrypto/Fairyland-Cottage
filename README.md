@@ -78,6 +78,15 @@ On the home page we give a warming welcome note and a insight into simply living
 
   I wanted old users to feel that they where still in the world of Fairyland while new users where greeted with the organic earthly feel Josefin Slab offers while reading and browsing through the site.
 
+  ### Icons
+
+  ![Icons](assets/images/icons-side.webp)
+  ![Icons](assets/images/icons.webp)
+
+  - The icons I used are from the [Fontawesome]() Icon library using the <<i>i</i>> tag.
+
+  - They are utalised is the footer on pages 768px and up. While added to the side bar on mobile devices.
+
 ## [Features](#features)
 
 - ### Navbar
