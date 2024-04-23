@@ -129,19 +129,37 @@ On the home page we give a warming welcome note and a insight into simply living
 
 ## [Features](#features)
 
-- ### Navbar
+### Page Elements
 
-  The navbar for 768px & up is simple, clean and minimal. Containing links to each page while also the img logo returns the user to the home page at any point.
+### Full site
+
+#### - Navbar
+
+- The navbar design for screens 768px & up prioritizes simplicity, cleanliness, and minimalism. It effectively guides users with links to each page, ensuring easy navigation. Additionally, the inclusion of an image logo offers users a quick way to return to the home page from any section of the website.
 
   ![alt img](assets/images/navbar-768px.webp)
 
-  The navbar for small devices, such as mobiles, transitions to a side bar to offer more screen real estate. This also toggles the page links by clicking the 3 dots ... As there is no footer on the small screens I have added the social links as part of the side bar. <br>
+- On smaller devices like mobile phones, the navbar adapts its layout to a side bar format to optimize screen space. This transition enhances the user experience by providing more visible content on the limited screen real estate of mobile devices. The sidebar design effectively organizes page links and can be toggled by clicking the 3 dots icon, offering a streamlined navigation experience.
+
+- To further enhance usability on small screens, where space constraints may limit the visibility of a footer, social media links have been integrated within the side bar. This strategic placement ensures that users can easily access and engage with social media platforms without compromising the overall navigation experience on smaller devices.<br>
 
   ![alt img](assets/images/navbar-toggleoff.webp) ![alt img](assets/images/navbar-toggleon.webp)
 
-- ### Videos page
-- ### Image gallery
-- ### Contact page
+#### - Footer
+
+- The footer features a simple and minimalist design to maintain consistency with the headers layout.
+
+- Includes only social media links and website copyright information for streamlined navigation.
+
+- Social media links direct users to separate webpages for YouTube and Instagram, opening in a new tab for enhanced user experience.
+
+![footer img](assets/images/icons.webp)
+
+### Videos page
+
+### Image gallery
+
+### Contact page
 
 ## [Technologies](#technologies)
 
