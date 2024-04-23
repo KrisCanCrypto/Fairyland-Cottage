@@ -78,24 +78,26 @@ On the home page we give a warming welcome note and a insight into simply living
 
   I aimed to create a seamless transition for returning users, evoking a sense of familiarity with the world of Fairyland, while new visitors are welcomed with the organic and earthy aesthetic of Josefin Slab font, enhancing their reading and browsing experience on the site.
 
-  ### Icons
+  <img src="assets/images/josefin-slab-example.webp" alt="appearance" width="500px" margin=" 0 auto"/>
 
-  ![Icons](assets/images/icons-side.webp)
-  ![Icons](assets/images/icons.webp)
+  ### Icons
 
   - The icons I used are from the [Fontawesome]() Icon library using the <<i>i</i>> tag.
 
   - They are utalised is the footer on pages 768px and up. While added to the side bar on mobile devices.
 
-  ### Colors
+  ![Icons](assets/images/icons-side.webp)
+  ![Icons](assets/images/icons.webp)
 
-  ![Website colors](assets/images/color-pallet.webp)
+  ### Colors
 
   - I used the site [coolors](https://coolors.co/ded5cd-f3eae2-41462d-e9ead6) to create the color pallet.
 
   - I strive for the website to offer users a sense of rooted-ness and a strong connection to nature.
 
   - I selected the drab dark brown color to evoke a sense of organic connection to the earth, bridging the tones of the soil and forest greens. This choice allows it to contrast and stand out against the lighter hues present throughout the site.
+
+  ![Website colors](assets/images/color-pallet.webp)
 
   ### Images
 
