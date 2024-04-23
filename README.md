@@ -99,7 +99,7 @@ On the home page we give a warming welcome note and a insight into simply living
 
   ![Website colors](assets/images/color-pallet.webp)
 
-  ### Images
+  ### [Images](#images)
 
   On the **landing pages** I chose two hero images.
 
@@ -131,7 +131,7 @@ On the home page we give a warming welcome note and a insight into simply living
 
 ### Page Elements
 
-### Full site
+### **_All Web Pages_**
 
 #### - Navbar
 
@@ -143,7 +143,7 @@ On the home page we give a warming welcome note and a insight into simply living
 
 - To further enhance usability on small screens, where space constraints may limit the visibility of a footer, social media links have been integrated within the side bar. This strategic placement ensures that users can easily access and engage with social media platforms without compromising the overall navigation experience on smaller devices.<br>
 
-  ![alt img](assets/images/navbar-toggleoff.webp) ![alt img](assets/images/navbar-toggleon.webp)
+  <img src="assets/images/navbar-toggleoff.webp" alt="Side bar" height="600"/> <img src="assets/images/navbar-toggleon.webp" alt="Side bar toggle " height="600"/>
 
 #### - Footer
 
@@ -155,11 +155,31 @@ On the home page we give a warming welcome note and a insight into simply living
 
 ![footer img](assets/images/icons.webp)
 
-### Videos page
+### **_Landing Page_**
 
-### Image gallery
+The landing page displays one of two hero images located in the [images](#images) section of this README, with the image being dynamically selected based on the screen size of the device.
 
-### Contact page
+- There are also two text sections:
+
+  1. The initial component comprises a salutation directed towards both new and returning users, accompanied by a succinct overview of the site's offerings & functionalities.
+
+    <img src="assets/images/welcome-note.webp" alt="Side bar" width="500"/>
+
+  <br>
+
+  2. This section highlights the principles of a simple living ethos, emphasizing the importance of sustainable practices such as minimalism, waste reduction and renewable resources. It underscores the benefits of simplifying our lives, focusing on what matters most, and integrating nature into our daily routines to promote a more sustainable and fulfilling lifestyle for both individuals and the environment.
+
+  <img src="assets/images/simple-living.webp" alt="Side bar" width="500"/>
+
+### **_Videos Gallery_**
+
+Within the videos page, there are three distinct sections that cater to various aspects of the _Fairyland Cottage_ ecosystem. Each of these sections serves a unique purpose in promoting a simplified living ethos lifestyle.
+
+1. The initial video segment is often regarded as challenging by many individuals due to a lack of sufficient information, support, and guidance. Therefore, I have a series of calming and inspiring videos to reassure users that success in this area is indeed attainable.
+
+### **_Image Gallery_**
+
+### **_Contact Page_**
 
 ## [Technologies](#technologies)
 
