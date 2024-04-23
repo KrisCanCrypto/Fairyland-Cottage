@@ -177,7 +177,7 @@ Within the videos page, there are three distinct sections that cater to various 
 
 1. The first video section may present a significant challenge for some users, as they may lack the necessary information, support, or guidance to navigate this aspect effectively. In response, I have curated a selection of calming and motivational videos to ease users into the process and demonstrate that success in this area is within reach.
 
- <img src="assets/images/zero-waste.webp" alt="zero waste videos" width="500"/>
+   <img src="assets/images/zero-waste.webp" alt="zero waste videos" width="400"/>
 
 ### **_Image Gallery_**
 
