@@ -163,19 +163,21 @@ The landing page displays one of two hero images located in the [images](#images
 
   1. The initial component comprises a salutation directed towards both new and returning users, accompanied by a succinct overview of the site's offerings & functionalities.
 
-    <img src="assets/images/welcome-note.webp" alt="Side bar" width="500"/>
+    <img src="assets/images/welcome-note.webp" alt="welcome note" width="500"/>
 
   <br>
 
   2. This section highlights the principles of a simple living ethos, emphasizing the importance of sustainable practices such as minimalism, waste reduction and renewable resources. It underscores the benefits of simplifying our lives, focusing on what matters most, and integrating nature into our daily routines to promote a more sustainable and fulfilling lifestyle for both individuals and the environment.
 
-  <img src="assets/images/simple-living.webp" alt="Side bar" width="500"/>
+  <img src="assets/images/simple-living.webp" alt="Simple living ethos" width="500"/>
 
 ### **_Videos Gallery_**
 
-Within the videos page, there are three distinct sections that cater to various aspects of the _Fairyland Cottage_ ecosystem. Each of these sections serves a unique purpose in promoting a simplified living ethos lifestyle.
+Within the videos page, there are three distinct sections that cater to various aspects of the _Fairyland Cottage_ ecosystem. These sections are designed to support and promote the ethos of the simplified living ethos lifestyle.
 
-1. The initial video segment is often regarded as challenging by many individuals due to a lack of sufficient information, support, and guidance. Therefore, I have a series of calming and inspiring videos to reassure users that success in this area is indeed attainable.
+1. The first video section may present a significant challenge for some users, as they may lack the necessary information, support, or guidance to navigate this aspect effectively. In response, I have curated a selection of calming and motivational videos to ease users into the process and demonstrate that success in this area is within reach.
+
+ <img src="assets/images/zero-waste.webp" alt="zero waste videos" width="500"/>
 
 ### **_Image Gallery_**
 
