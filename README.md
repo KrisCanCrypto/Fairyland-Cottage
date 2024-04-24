@@ -191,16 +191,21 @@ In order for the user to switch between each video, they will need to utilize th
 
 For small devices, a revised layout has been implemented to optimize the horizontal orientation of mobile devices. This layout displays three available videos for user access.
 
-<img src="assets/images/mobile-devices.webp" alt="Simple living ethos" height="500"/>
+<img src="assets/images/mobile-devices.webp" alt="Mobile video gallery" height="500"/>
 
 <br>
 <hr>
 
 **- Video Category's**
 
-1. The first video section intermittently present a substantial challenge for some users, as they may lack the necessary information, support, or guidance to navigate this aspect effectively. In response, I have curated a selection of calming and motivational videos to ease users into the process and demonstrate that success in this area is within reach.
+1.  The first video section intermittently present a substantial challenge for some users, as they may lack the necessary information, support, or guidance to navigate this aspect effectively. In response, I have curated a selection of calming and motivational videos to ease users into the process and demonstrate that success in this area is within reach.<br><br><img src="assets/images/zero-waste.webp" alt="zero waste videos" width="400"/>
+    <br><br>
+2.  The second video section provides users with an illustration of the simplicity and benefits of a peaceful lifestyle. These videos offer a glimpse into a tranquil way of living.<br><br><img src="assets/images/video-section-2.webp" alt="Simple Living" width="400"/>
+    <br><br>
+3.  In the concluding video section, I have included content focused on a minimal lifestyle, as this step is essential in the process of relinquishing perceived necessities. These videos serve as a guide for individuals and families in achieving this outcome.
+    <br><br><img src="assets/images/video-section-3.webp" alt="Minimal Lifestyle" width="400"/>
 
-   <img src="assets/images/zero-waste.webp" alt="zero waste videos" width="400"/>
+ <hr>
 
 ### **_Image Gallery_**
 
