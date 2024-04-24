@@ -141,7 +141,7 @@ On the home page we give a warming welcome note and a insight into simply living
 
   ![alt img](assets/images/navbar-768px.webp)
 
-##### [Sidebar](#sidebar)
+##### - [Sidebar](#sidebar)
 
 - On smaller devices like mobile phones, the navbar adapts its layout to a side bar format to optimize screen space. This transition enhances the user experience by providing more visible content on the limited screen real estate of mobile devices. The sidebar design effectively organizes page links and can be toggled by clicking the 3 dots icon, offering a streamlined navigation experience.
 
@@ -249,6 +249,18 @@ In order to optimize user experience, I have limited the display to a maximum of
 - ### Other Tools
 
 ## [Manual Testing](#manual-testing)
+
+### Code Validation
+
+- To validate the HTML I used [W3 Validator](https://validator.w3.org).
+
+1.  #### Landing Page:
+
+    <img src="assets/images/landing-page.webp" width="500px" alt="landing page validation">
+
+2.  #### Video Page: <br>
+    On first test I found an error regarding **alt** on all iframe elements -
+    <img src="assets/images/error-video-page.webp" width="500px" alt="landing page validation">
 
 ## [Deployment](#deployment)
 
