@@ -133,11 +133,15 @@ On the home page we give a warming welcome note and a insight into simply living
 
 ### **_All Web Pages_**
 
-#### - [Navbar](#navbar)
+#### - Navbar
+
+##### 768px & up Navbar
 
 - The navbar design for screens 768px & up prioritizes simplicity, cleanliness, and minimalism. It effectively guides users with links to each page, ensuring easy navigation. Additionally, the inclusion of an image logo offers users a quick way to return to the home page from any section of the website.
 
   ![alt img](assets/images/navbar-768px.webp)
+
+##### [Sidebar](#sidebar)
 
 - On smaller devices like mobile phones, the navbar adapts its layout to a side bar format to optimize screen space. This transition enhances the user experience by providing more visible content on the limited screen real estate of mobile devices. The sidebar design effectively organizes page links and can be toggled by clicking the 3 dots icon, offering a streamlined navigation experience.
 
@@ -175,15 +179,26 @@ The landing page displays one of two hero images located in the [images](#images
 
 Within the videos page, there are three distinct sections that cater to various aspects of the _Fairyland Cottage_ ecosystem. These sections are designed to support and promote the ethos of the simplified living ethos lifestyle.
 
-**_- Three dots_**
+**- Three dots**
 
-In order for the user to switch between each video, they will need to utilize the three dots displayed underneath the videos. This functionality is exclusive to device screens with a width of 768px or larger. The presence of the three dots is intended to maintain consistency with the 3 dots icon located in the sidebar [navbar](#navbar).
+In order for the user to switch between each video, they will need to utilize the three dots displayed underneath the videos. This functionality is exclusive to device screens with a width of 768px or larger. The presence of the three dots is intended to maintain consistency with the 3 dots icon located in the [sidebar](#sidebar).
 
 ![3 dots selector](assets/images/3dots.wbp.png)
 
-**_- Video Sections_**
+<hr>
 
-1. The first video section may present a significant challenge for some users, as they may lack the necessary information, support, or guidance to navigate this aspect effectively. In response, I have curated a selection of calming and motivational videos to ease users into the process and demonstrate that success in this area is within reach.
+**- Mobile devices**
+
+For small devices, a revised layout has been implemented to optimize the horizontal orientation of mobile devices. This layout displays three available videos for user access.
+
+<img src="assets/images/mobile-devices.webp" alt="Simple living ethos" height="500"/>
+
+<br>
+<hr>
+
+**- Video Category's**
+
+1. The first video section intermittently present a substantial challenge for some users, as they may lack the necessary information, support, or guidance to navigate this aspect effectively. In response, I have curated a selection of calming and motivational videos to ease users into the process and demonstrate that success in this area is within reach.
 
    <img src="assets/images/zero-waste.webp" alt="zero waste videos" width="400"/>
 
