@@ -159,6 +159,9 @@ On the home page we give a warming welcome note and a insight into simply living
 
 ![footer img](assets/images/icons.webp)
 
+<br>
+<hr>
+
 ### **_Landing Page_**
 
 The landing page displays one of two hero images located in the [images](#images) section of this README, with the image being dynamically selected based on the screen size of the device.
@@ -175,6 +178,9 @@ The landing page displays one of two hero images located in the [images](#images
 
      <img src="assets/images/simple-living.webp" alt="Simple living ethos" width="500"/>
 
+<br>
+<hr>
+
 ### **_Videos Gallery_**
 
 Within the videos page, there are three distinct sections that cater to various aspects of the _Fairyland Cottage_ ecosystem. These sections are designed to support and promote the ethos of the simplified living ethos lifestyle.
@@ -185,7 +191,7 @@ In order for the user to switch between each video, they will need to utilize th
 
 ![3 dots selector](assets/images/3dots.wbp.png)
 
-<hr>
+<br>
 
 **- Mobile devices**
 
@@ -194,17 +200,17 @@ For small devices, a revised layout has been implemented to optimize the horizon
 <img src="assets/images/mobile-devices.webp" alt="Mobile video gallery" height="500"/>
 
 <br>
-<hr>
 
 **- Video Category's**
 
-1.  The first video section intermittently present a substantial challenge for some users, as they may lack the necessary information, support, or guidance to navigate this aspect effectively. In response, I have curated a selection of calming and motivational videos to ease users into the process and demonstrate that success in this area is within reach.<br><br><img src="assets/images/zero-waste.webp" alt="zero waste videos" width="400"/>
+1.  The first video section intermittently presents a substantial challenge for some users, as they may lack the necessary information, support, or guidance to navigate this aspect effectively. In response, I have curated a selection of calming and motivational videos to ease users into the process and demonstrate that success in this area is within reach.<br><br><img src="assets/images/zero-waste.webp" alt="zero waste videos" width="400"/>
     <br><br>
 2.  The second video section provides users with an illustration of the simplicity and benefits of a peaceful lifestyle. These videos offer a glimpse into a tranquil way of living.<br><br><img src="assets/images/video-section-2.webp" alt="Simple Living" width="400"/>
     <br><br>
 3.  In the concluding video section, I have included content focused on a minimal lifestyle, as this step is essential in the process of relinquishing perceived necessities. These videos serve as a guide for individuals and families in achieving this outcome.
     <br><br><img src="assets/images/video-section-3.webp" alt="Minimal Lifestyle" width="400"/>
 
+<br>
  <hr>
 
 ### **_Image Gallery_**
@@ -219,9 +225,12 @@ The page layout dynamically adjusts based on the user's device.
 
 <br>
 
-- For devices with a minimum width of 1024px and higher, the layout will adjust to a two-column display.<br><br><img src="assets/images/two-column.webp" alt="two-column display" width="400"/>
+- For devices with a minimum width of 1024px and higher, the layout will adjust to a two-column display.<br><br><img src="assets/images/two-column.webp" alt="two-column display" width="500"/>
 
 In order to optimize user experience, I have limited the display to a maximum of two columns to prevent users from being inundated with excessive visual information.
+
+<br>
+<hr>
 
 ### **_Contact Page_**
 
