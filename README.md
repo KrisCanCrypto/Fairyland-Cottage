@@ -209,6 +209,20 @@ For small devices, a revised layout has been implemented to optimize the horizon
 
 ### **_Image Gallery_**
 
+The primary function of the image gallery page is to provide users with a visual representation of _Fairyland Cottage_, showcasing moments frozen in time. Additionally, it serves as a source of visual relaxation for individuals who may prefer images over videos or have limited time to watch them.
+
+**- Page layout**
+
+The page layout dynamically adjusts based on the user's device.
+
+- For devices with a maximum width of 1023px, the display is configured to be in a single column layout.<br><br><img src="assets/images/one-column.webp" alt="Mobile img gallery" height="400"/>
+
+<br>
+
+- For devices with a minimum width of 1024px and higher, the layout will adjust to a two-column display.<br><br><img src="assets/images/two-column.webp" alt="two-column display" width="400"/>
+
+In order to optimize user experience, I have limited the display to a maximum of two columns to prevent users from being inundated with excessive visual information.
+
 ### **_Contact Page_**
 
 ## [Technologies](#technologies)
