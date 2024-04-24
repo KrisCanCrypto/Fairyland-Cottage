@@ -133,7 +133,7 @@ On the home page we give a warming welcome note and a insight into simply living
 
 ### **_All Web Pages_**
 
-#### - Navbar
+#### - [Navbar](#navbar)
 
 - The navbar design for screens 768px & up prioritizes simplicity, cleanliness, and minimalism. It effectively guides users with links to each page, ensuring easy navigation. Additionally, the inclusion of an image logo offers users a quick way to return to the home page from any section of the website.
 
@@ -163,17 +163,25 @@ The landing page displays one of two hero images located in the [images](#images
 
   1. The initial component comprises a salutation directed towards both new and returning users, accompanied by a succinct overview of the site's offerings & functionalities.
 
-    <img src="assets/images/welcome-note.webp" alt="welcome note" width="500"/>
+     <img src="assets/images/welcome-note.webp" alt="welcome note" width="500"/>
 
   <br>
 
   2. This section highlights the principles of a simple living ethos, emphasizing the importance of sustainable practices such as minimalism, waste reduction and renewable resources. It underscores the benefits of simplifying our lives, focusing on what matters most, and integrating nature into our daily routines to promote a more sustainable and fulfilling lifestyle for both individuals and the environment.
 
-  <img src="assets/images/simple-living.webp" alt="Simple living ethos" width="500"/>
+     <img src="assets/images/simple-living.webp" alt="Simple living ethos" width="500"/>
 
 ### **_Videos Gallery_**
 
 Within the videos page, there are three distinct sections that cater to various aspects of the _Fairyland Cottage_ ecosystem. These sections are designed to support and promote the ethos of the simplified living ethos lifestyle.
+
+**_- Three dots_**
+
+In order for the user to switch between each video, they will need to utilize the three dots displayed underneath the videos. This functionality is exclusive to device screens with a width of 768px or larger. The presence of the three dots is intended to maintain consistency with the 3 dots icon located in the sidebar [navbar](#navbar).
+
+![3 dots selector](assets/images/3dots.wbp.png)
+
+**_- Video Sections_**
 
 1. The first video section may present a significant challenge for some users, as they may lack the necessary information, support, or guidance to navigate this aspect effectively. In response, I have curated a selection of calming and motivational videos to ease users into the process and demonstrate that success in this area is within reach.
 
