@@ -332,9 +332,13 @@ In order to optimize user experience, I have limited the display to a maximum of
 
 <hr>
 
-### General site Testing
+### General Testing & Bugs
 
 - I performed thorough testing on the website using my Android device to verify the functionality of all buttons, features, and the contact form. Subsequently, I tested the site on an iOS device belonging to my wife to confirm compatibility with Apple devices, which proved successful.
+
+- In the event of a page loading issue, I have implemented a 404.html page to redirect users to an alternative page and offer apologies for any inconvenience caused by the site's loading error.
+
+- The Gallery page experiences slow load times due to high-quality images. By converting all images from .jpg to .webp format, an improvement in speed was observed.
 
 ## [Deployment](#deployment)
 
