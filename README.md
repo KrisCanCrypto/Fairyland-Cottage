@@ -234,6 +234,31 @@ In order to optimize user experience, I have limited the display to a maximum of
 
 ### **_Contact Page_**
 
+On the contact page, users are provided with a contact form to communicate with _Fairyland Cottage_. This form allows users to inquire about services, ask questions, or simply send a personal message.
+
+- This feature aims to facilitate user engagement by fostering a sense of connectivity and promoting active participation.
+
+  <img src="assets/images/contact-form.webp" width="400px" alt="Contact form image">
+
+  <br>
+
+- The "Send Mail" button dynamically changes its color to provide a visual indicator to the user that they are hovering over the button to trigger the mail sending functionality.
+
+  <img src="assets/images/contact-button-org.webp" width="400px" alt="Contact form image">
+  <img src="assets/images/contact-button.webp" width="400px" alt="Contact form image">
+
+  <br>
+
+- The contact page employs a responsive design layout that dynamically adjusts its structure based on the user's device and screen size.
+
+  1.  Desktop:
+
+      <img src="assets/images/contact-page-desktop.webp" width="400px" alt="Contact form image">
+
+  1.  Mobile:
+
+      <img src="assets/images/contact-page-mobile.webp" height="400px" alt="Contact form image">
+
 ## [Technologies](#technologies)
 
 - ### Languages
