@@ -292,6 +292,18 @@ In order to optimize user experience, I have limited the display to a maximum of
 
 <hr>
 
+### Lighthouse Results
+
+1.  #### Landing Page:
+
+2.  #### Video Page:
+
+3.  #### Gallery Page:
+
+4.  #### Contact Page:
+
+<hr>
+
 ### General site Testing
 
 -
