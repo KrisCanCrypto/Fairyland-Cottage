@@ -213,7 +213,7 @@ For small devices, a revised layout has been implemented to optimize the horizon
 <br>
  <hr>
 
-### **_Image Gallery_**
+### **_[Image Gallery](#image-gallery)_**
 
 The primary function of the image gallery page is to provide users with a visual representation of _Fairyland Cottage_, showcasing moments frozen in time. Additionally, it serves as a source of visual relaxation for individuals who may prefer images over videos or have limited time to watch them.
 
@@ -397,6 +397,12 @@ To access click on the link and visit [Fairyland Cottage](https://terryloc.githu
 7. Your site will be published and accessible at `https://your-username.github.io/Fairyland-Cottage/`.
 
 ## [Credits](#credits)
+
+- Credit must be given to the [Love Running](https://terryloc.github.io/love-running/gallery.html) project, specifically the gallery page, for inspiring the development of the [Fairyland Cottage Gallery](#image-gallery).
+
+- Credit is attributed to [Deltaty Code](https://www.youtube.com/watch?v=3MoRr5sudO0) for the video page, as their image slider video and code were instrumental in the development of the video slider for desktop devices. By integrating grid layout techniques, I successfully constructed the video slider on the webpage.
+
+- Finally, I would like to acknowledge Rory Patrick Sheridan for generously providing his README template for the [horizon-photo](https://github.com/Ri-Dearg/horizon-photo/blob/master/README.md#mobile-testing) project. This invaluable resource has provided me with a solid framework and clear direction to create a comprehensive and effective README file.
 
 ## [Author](#author)
 
