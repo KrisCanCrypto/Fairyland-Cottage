@@ -296,6 +296,13 @@ In order to optimize user experience, I have limited the display to a maximum of
 
 1.  #### Landing Page:
 
+    ##### Mobile -
+
+      <img src="assets/images/index-lighthouse.webp" width="400px" alt="landing page validation">
+      
+      ##### Desktop - 
+      <img src="assets/images/index-desktop.webp" width="400px" alt="landing page validation">
+
 2.  #### Video Page:
 
 3.  #### Gallery Page:
