@@ -261,9 +261,11 @@ In order to optimize user experience, I have limited the display to a maximum of
 2.  #### Video Page: <br>
 
     On first test I found an error regarding **alt** on all iframe elements -
+
     <img src="assets/images/error-video-page.webp" width="400px" alt="landing page validation">
 
     To solve the error I changed **alt** to **name** -
+
     <img src="assets/images/video-page.webp" width="400px" alt="landing page validation">
 
 3.  #### Gallery Page:
