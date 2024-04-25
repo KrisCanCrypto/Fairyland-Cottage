@@ -298,16 +298,37 @@ In order to optimize user experience, I have limited the display to a maximum of
 
     ##### Mobile -
 
-      <img src="assets/images/index-lighthouse.webp" width="400px" alt="landing page validation">
+       <img src="assets/images/index-lighthouse.webp" width="400px" alt="landing page validation">
       
-      ##### Desktop - 
+    ##### Desktop - 
       <img src="assets/images/index-desktop.webp" width="400px" alt="landing page validation">
 
 2.  #### Video Page:
 
+    ##### Mobile -
+
+    <img src="assets/images/video-mobile.webp" width="400px" alt="landing page validation">
+      
+      ##### Desktop - 
+    <img src="assets/images/video-desktop.webp" width="400px" alt="landing page validation">
+
 3.  #### Gallery Page:
 
+    ##### Mobile -
+
+       <img src="assets/images/gallery-mobile.webp" width="400px" alt="landing page validation">
+      
+    ##### Desktop - 
+      <img src="assets/images/gallery-desktop.webp" width="400px" alt="landing page validation">
+
 4.  #### Contact Page:
+
+    ##### Mobile -
+
+       <img src="assets/images/contact-mobile.webp" width="400px" alt="landing page validation">
+      
+    ##### Desktop - 
+      <img src="assets/images/contact-desktop.webp" width="400px" alt="landing page validation">
 
 <hr>
 
