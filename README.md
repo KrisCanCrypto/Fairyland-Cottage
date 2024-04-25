@@ -252,26 +252,49 @@ In order to optimize user experience, I have limited the display to a maximum of
 
 ### Code Validation
 
-- To validate the HTML I used [W3 Validator](https://validator.w3.org).
+- To validate the **HTML** I used [W3 Validator](https://validator.w3.org).
 
 1.  #### Landing Page:
 
-    <img src="assets/images/landing-page.webp" width="500px" alt="landing page validation">
+    <img src="assets/images/landing-page.webp" width="400px" alt="landing page validation">
 
 2.  #### Video Page: <br>
 
     On first test I found an error regarding **alt** on all iframe elements -
-    <img src="assets/images/error-video-page.webp" width="500px" alt="landing page validation">
+    <img src="assets/images/error-video-page.webp" width="400px" alt="landing page validation">
 
     To solve the error I changed **alt** to **name** -
-    <img src="assets/images/video-page.webp" width="500px" alt="landing page validation">
+    <img src="assets/images/video-page.webp" width="400px" alt="landing page validation">
 
 3.  #### Gallery Page:
 
-    <img src="assets/images/gallery-page.webp" width="500px" alt="landing page validation">
+    <img src="assets/images/gallery-page.webp" width="400px" alt="landing page validation">
 
 4.  #### Contact Page:
-    <img src="assets/images/contact-page.webp" width="500px" alt="landing page validation">
+    <img src="assets/images/contact-page.webp" width="400px" alt="landing page validation">
+
+- To validate the **CSS** I used [W3C CSS Validator](hhttps://jigsaw.w3.org/css-validator/).
+
+1.  #### Landing Page:
+
+    <img src="assets/images/index-css.webp.png" width="400px" alt="landing page validation">
+
+2.  #### Video Page: <br>
+
+    <img src="assets/images/video-css.webp.png" width="400px" alt="landing page validation">
+
+3.  #### Gallery Page:
+
+    <img src="assets/images/gallery-css.webp.png" width="400px" alt="landing page validation">
+
+4.  #### Contact Page:
+    <img src="assets/images/contact-css.webp.png" width="400px" alt="landing page validation">
+
+<hr>
+
+### General site Testing
+
+-
 
 ## [Deployment](#deployment)
 
