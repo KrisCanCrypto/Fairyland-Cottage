@@ -247,6 +247,9 @@ In order to optimize user experience, I have limited the display to a maximum of
   [VS Code](https://code.visualstudio.com/) - IDE for code editing / project development.
 
 - ### Other Tools
+  [Font Awesome](https://fontawesome.com/) - This where I got icons for social links.<br>
+  [DeepAI](https://deepai.org/chat) - Used to enhance my writings clarity, grammar and spelling.<br>[Favicon Generator](https://favicon.io) - Create favicons needed.<br>
+  [Coolors](https://coolors.co/) - For creating my color pallet.
 
 ## [Manual Testing](#manual-testing)
 
