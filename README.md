@@ -278,7 +278,7 @@ In order to optimize user experience, I have limited the display to a maximum of
 4.  #### Contact Page:
     <img src="assets/images/contact-page.webp" width="400px" alt="landing page validation">
 
-- To validate the **CSS** I used [W3C CSS Validator](hhttps://jigsaw.w3.org/css-validator/).
+- To validate the **CSS** I use [CSS Validator](https://jigsaw.w3.org/css-validator/)
 
 1.  #### Landing Page:
 
