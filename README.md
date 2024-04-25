@@ -266,6 +266,13 @@ In order to optimize user experience, I have limited the display to a maximum of
     To solve the error I changed **alt** to **name** -
     <img src="assets/images/video-page.webp" width="500px" alt="landing page validation">
 
+3.  #### Gallery Page:
+
+    <img src="assets/images/gallery-page.webp" width="500px" alt="landing page validation">
+
+4.  #### Contact Page:
+    <img src="assets/images/contact-page.webp" width="500px" alt="landing page validation">
+
 ## [Deployment](#deployment)
 
 This project is deployed using GitHub Pages. This section provides information on how to deploy & as a reference for future deployments.
