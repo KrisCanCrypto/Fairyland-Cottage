@@ -157,37 +157,37 @@ input {
   }
 
   #vid2:checked~.video-2 {
-    margin-left: 900px;
+    margin-left: 200%;
   }
 
   #vid3:checked~.video-3 {
-    margin-left: -500%;
+    margin-left: -200%;
   }
 
   #vid4:checked~.video-1 {
-    margin-left: 0%;
+    margin-left: 0;
     z-index: 1;
   }
 
   #vid5:checked~.video-2 {
-    margin-left: 900%;
+    margin-left: 200%;
   }
 
   #vid6:checked~.video-3 {
-    margin-left: -500%;
+    margin-left: -200%;
   }
 
   #vid7:checked~.video-1 {
-    margin-left: 0%;
+    margin-left: 0;
     z-index: 1;
   }
 
   #vid8:checked~.video-2 {
-    margin-left: 400%;
+    margin-left: 200%;
   }
 
   #vid9:checked~.video-3 {
-    margin-left: -500%;
+    margin-left: -200%;
   }
 }
 
@@ -222,6 +222,7 @@ input {
   .container {
     grid-template-columns: 150px 150px 150px 150px 150px 150px 150px 150px 150px;
     grid-template-rows: 150px 150px 150px 150px;
+    margin-bottom: 30px;
   }
 
   .container .video {
