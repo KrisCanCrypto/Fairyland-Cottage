@@ -52,7 +52,7 @@ main {
 
 input,
 textarea {
-  margin-top: 8px;
+  margin: 10px 0;
 }
 
 .text-input::placeholder,
@@ -61,7 +61,8 @@ textarea {
   font-size: 80%;
 }
 
-#contact-form>p {
+#contact-form>label {
+  margin-top: 10px;
   font-size: 80%;
   margin-bottom: 20px;
 }
@@ -128,7 +129,7 @@ textarea {
     font-size: 80%;
   }
 
-  #contact-form>p {
+  #contact-form>label {
     font-size: 90%;
   }
 
@@ -157,7 +158,7 @@ textarea {
     font-size: 95%;
   }
 
-  #contact-form>p {
+  #contact-form>label {
     font-size: 110%;
     padding-bottom: 20px;
   }

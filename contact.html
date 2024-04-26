@@ -76,26 +76,22 @@
         <i class="fa-solid fa-leaf fa-flip-horizontal"></i> say hello<i class="fa-solid fa-leaf"></i>
       </h2>
       <p>I’d love to hear from you!</p>
-      <form method="POST" id="contact-form" action="https://formdump.codeinstitute.net">
+      <form method="POST" id="contact-form" action="https://formdump.codeinstitute.net" target="_blank">
+        <label for="first-name">First Name:</label>
+        <input type="text" id="first-name" name="first-name" placeholder="Joe" class="text-input" required />
 
-        <p>
-          First Name:
-          <input type="text" id="first-name" placeholder="Joe" class="text-input" required />
+        <label for="last-name">Last Name:</label>
+        <input type="text" id="last-name" name="last-name" placeholder="Blogs" class="text-input" required />
+
+        <label for="email-address">Email Address:</label>
+        <input type="email" id="email-address" name="email-address" placeholder="joeblogs@email.com" class="text-input"
+          required />
+        <label for="subject">Subject:</label>
+        <textarea name="subject" id="question" cols="25" rows="7" placeholder="Type your message..."
+          required></textarea>
         </p>
-        <p>
-          Last Name:
-          <input type="text" id="last-name" placeholder="Blogs" class="text-input" required />
-        </p>
-        <p>
-          Email Address:
-          <input type="email" id="email-address" placeholder="joeblogs@email.com" class="text-input" required />
-        </p>
-        <p>
-          Subject:
-          <textarea name="subject" id="question" cols="25" rows="7" placeholder="Type your message..."></textarea>
-        </p>
-        <br>
-        <input type="submit" class="send-button" value="Send Mail">
+        <br />
+        <input type="submit" class="send-button" value="Send Mail" />
       </form>
     </section>
   </main>
