@@ -38,3 +38,11 @@
     column-count: 2;
   }
 }
+
+/* 4k screens */
+@media screen and (min-width: 2560px) {
+
+  main {
+    margin-top: 290px;
+  }
+}
