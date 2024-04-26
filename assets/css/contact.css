@@ -50,6 +50,11 @@ main {
   margin: 40px 10px 40px 0;
 }
 
+input,
+textarea {
+  margin-top: 8px;
+}
+
 .text-input::placeholder,
 #question::placeholder {
   color: rgba(233, 234, 214, 0.6);
@@ -168,12 +173,10 @@ main {
   }
 
   input {
-    margin-top: 10px;
     font-size: 80%;
   }
 
   textarea {
-    margin-top: 10px;
     font-size: inherit;
   }
 
