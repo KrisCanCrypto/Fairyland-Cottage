@@ -205,3 +205,34 @@ input {
     font-size: 110%;
   }
 }
+
+@media screen and (min-width: 2560px) {
+
+  .video-section {
+    height: 90vh;
+  }
+
+  .text p {
+    max-width: 900px;
+    margin-bottom: 20px;
+    font-size: 110%;
+    margin-bottom: 40px;
+  }
+
+  .container {
+    grid-template-columns: 150px 150px 150px 150px 150px 150px 150px 150px 150px;
+    grid-template-rows: 150px 150px 150px 150px;
+  }
+
+  .container .video {
+    grid-column: 2 / 9;
+    grid-row: 1 / 5;
+    height: 600px;
+    min-width: 100%;
+  }
+
+  .dots label {
+    height: 20px;
+    width: 20px;
+  }
+}
