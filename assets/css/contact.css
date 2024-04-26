@@ -132,3 +132,53 @@ main {
     font-size: 80%;
   }
 }
+
+/* 4k screens */
+@media screen and (min-width: 2560px) {
+
+  /* Contact form */
+  #contact {
+    margin-top: 50px;
+    max-width: 1100px;
+  }
+
+
+  #contact>h2 {
+    font-size: 140%;
+    padding-bottom: 10px;
+  }
+
+  #contact>p {
+    font-size: 95%;
+  }
+
+  #contact-form>p {
+    font-size: 110%;
+    padding-bottom: 20px;
+  }
+
+  .text-input {
+    padding: 20px 10px;
+    height: 50px;
+  }
+
+  #question {
+    padding: 20px 10px;
+    height: 200px;
+  }
+
+  input {
+    margin-top: 10px;
+    font-size: 80%;
+  }
+
+  textarea {
+    margin-top: 10px;
+    font-size: inherit;
+  }
+
+  .send-button {
+    height: 50px;
+    font-size: 80%;
+  }
+}
