@@ -15,7 +15,6 @@ main {
   width: 100%;
   min-height: 1000px;
   position: relative;
-
 }
 
 /*contact form*/
@@ -33,13 +32,13 @@ main {
   padding: 20px 0 20px 0;
 }
 
-#contact>h2 {
+#contact > h2 {
   margin-top: 30px;
   font-size: 50%;
   text-align: center;
 }
 
-#contact>p {
+#contact > p {
   margin-top: 10px;
   font-size: 70%;
   text-align: center;
@@ -61,7 +60,7 @@ textarea {
   font-size: 80%;
 }
 
-#contact-form>label {
+#contact-form > label {
   margin-top: 10px;
   font-size: 80%;
   margin-bottom: 20px;
@@ -100,9 +99,14 @@ textarea {
   background-color: var(--font-color1);
 }
 
+@media screen and (min-width: 400px) {
+  main {
+    font-size: 130%;
+  }
+}
+
 /* Media query: tablet and up (768px & up) */
 @media screen and (min-width: 768px) {
-
   /*New Image*/
   main {
     background: url(../images/walking.webp) center center/cover;
@@ -120,16 +124,15 @@ textarea {
     max-width: 600px;
   }
 
-
-  #contact>h2 {
+  #contact > h2 {
     font-size: 110%;
   }
 
-  #contact>p {
+  #contact > p {
     font-size: 80%;
   }
 
-  #contact-form>label {
+  #contact-form > label {
     font-size: 90%;
   }
 
@@ -141,24 +144,22 @@ textarea {
 
 /* 4k screens */
 @media screen and (min-width: 2560px) {
-
   /* Contact form */
   #contact {
     margin-top: 50px;
     max-width: 1100px;
   }
 
-
-  #contact>h2 {
+  #contact > h2 {
     font-size: 140%;
     padding-bottom: 10px;
   }
 
-  #contact>p {
+  #contact > p {
     font-size: 95%;
   }
 
-  #contact-form>label {
+  #contact-form > label {
     font-size: 110%;
     padding-bottom: 20px;
   }
