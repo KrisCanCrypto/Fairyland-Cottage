@@ -174,8 +174,8 @@ h3 {
   width: fit-content;
   min-height: 200px;
   padding-top: 40px;
-  padding-left: 10px;
-  padding-right: 20px;
+  padding-left: 5px;
+  padding-right: 10px;
   border-radius: 0 50px 50px 0;
   color: var(--font-color2);
 }
@@ -195,7 +195,7 @@ h3 {
 
 /* Sections information*/
 .main-sections {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   text-align: justify;
   padding-right: 60px;
