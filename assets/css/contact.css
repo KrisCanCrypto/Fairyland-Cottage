@@ -83,6 +83,7 @@ textarea {
   padding: 5px 5px;
 }
 
+/* Button */
 .send-button {
   width: 100%;
   color: var(--font-color1);
@@ -94,9 +95,12 @@ textarea {
   cursor: pointer;
 }
 
+/* dynamically change its color */
 .send-button:hover {
+  transition: 0.2s ease-in;
   color: var(--main-color);
   background-color: var(--font-color1);
+  border: 1px solid var(--main-color);
 }
 
 @media screen and (min-width: 425px) {
