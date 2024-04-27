@@ -41,7 +41,6 @@
   line-height: 120%;
 }
 
-
 .container {
   display: flex;
   flex-direction: column;
@@ -55,7 +54,7 @@
   border-radius: 20px;
   padding: 2px;
   border: 1px solid var(--secondary-color);
-  box-shadow: 3px 3px 15px rgba(0, 00, 0, .6);
+  box-shadow: 3px 3px 15px rgba(0, 00, 0, 0.6);
 }
 
 .middle {
@@ -63,7 +62,7 @@
   color: var(--font-color2);
 }
 
-.middle>.container .video {
+.middle > .container .video {
   border: 1px solid var(--font-color1);
 }
 
@@ -72,7 +71,6 @@ input {
 }
 
 @media screen and (min-width: 768px) {
-
   .video-section {
     margin: 0;
     display: flex;
@@ -114,7 +112,7 @@ input {
 
   .video {
     margin: 0;
-    box-shadow: 3px 3px 15px rgba(0, 00, 0, .4);
+    box-shadow: 3px 3px 15px rgba(0, 00, 0, 0.4);
   }
 
   .container input {
@@ -145,54 +143,52 @@ input {
     background: var(--secondary-color);
   }
 
-
   .dots label:hover {
     background: var(--font-color1);
   }
 
   /*  video movements */
-  #vid1:checked~.video-1 {
+  #vid1:checked ~ .video-1 {
     margin-left: 0;
     z-index: 1;
   }
 
-  #vid2:checked~.video-2 {
+  #vid2:checked ~ .video-2 {
     margin-left: 200%;
   }
 
-  #vid3:checked~.video-3 {
+  #vid3:checked ~ .video-3 {
     margin-left: -200%;
   }
 
-  #vid4:checked~.video-1 {
+  #vid4:checked ~ .video-1 {
     margin-left: 0;
     z-index: 1;
   }
 
-  #vid5:checked~.video-2 {
+  #vid5:checked ~ .video-2 {
     margin-left: 200%;
   }
 
-  #vid6:checked~.video-3 {
+  #vid6:checked ~ .video-3 {
     margin-left: -200%;
   }
 
-  #vid7:checked~.video-1 {
+  #vid7:checked ~ .video-1 {
     margin-left: 0;
     z-index: 1;
   }
 
-  #vid8:checked~.video-2 {
+  #vid8:checked ~ .video-2 {
     margin-left: 200%;
   }
 
-  #vid9:checked~.video-3 {
+  #vid9:checked ~ .video-3 {
     margin-left: -200%;
   }
 }
 
 @media screen and (min-width: 1600px) {
-
   .text {
     padding-top: 20px;
   }
@@ -207,7 +203,6 @@ input {
 }
 
 @media screen and (min-width: 2560px) {
-
   .video-section {
     height: 90vh;
   }
