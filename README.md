@@ -358,7 +358,9 @@ After utilizing XConvert to compress all images on the website, I subsequently c
 
 - The Gallery page experiences slow load times due to high-quality images. By converting all images from .jpg to .webp format, an improvement in speed was observed.
 
--
+### Remaining bugs
+
+- Unfortunately, I was unable to successfully resolve the issue with the video slider on screen sizes of 768px and above. My intention was for each video to smoothly slide on and off the screen when the corresponding dot is clicked below. This remains a challenge that I aim to tackle in the future as I continue to enhance my skills and coding knowledge.
 
 ## [Deployment](#deployment)
 
