@@ -153,7 +153,7 @@ On the home page we give a warming welcome note and a insight into simply living
 
 - The footer features a simple and minimalist design to maintain consistency with the headers layout.
 
-- Includes only social media links and website copyright information for streamlined navigation.
+- Includes only social media links and website copyright information for streamlined navigation. Here we offer the solution to [user views](#users-views) no.4, being able to connect trough social links.
 
 - Social media links direct users to separate webpages for YouTube and Instagram, opening in a new tab for enhanced user experience.
 
@@ -410,6 +410,10 @@ Please note that this method will not allow you to easily sync changes between y
 - Finally, I would like to acknowledge Rory Patrick Sheridan for generously providing his README template for the [horizon-photo](https://github.com/Ri-Dearg/horizon-photo/blob/master/README.md#mobile-testing) project. This invaluable resource has provided me with a solid framework and clear direction to create a comprehensive and effective README file.
 
 ## [Author](#author)
+
+#### MY FINAL THOUGHTS:
+
+I am confident that the website successfully achieves goal number 5 of [users views](#users-views) by enhancing user engagement by inspiring and motivating users to embrace and enhance their sustainable lifestyles.
 
 - [@TerryLoc](https://github.com/TerryLoc)
 
