@@ -274,7 +274,8 @@ On the contact page, users are provided with a contact form to communicate with 
 - ### Other Tools
   [Font Awesome](https://fontawesome.com/) - This where I got icons for social links.<br>
   [DeepAI](https://deepai.org/chat) - Used to enhance my writings clarity, grammar and spelling.<br>[Favicon Generator](https://favicon.io) - Create favicons needed.<br>
-  [Coolors](https://coolors.co/) - For creating my color pallet.
+  [Coolors](https://coolors.co/) - For creating my color pallet.<br>
+  [XConvert](https://www.xconvert.com/compress-webp) - Used to compress .Webp images for faster site loading
 
 ## [Manual Testing](#manual-testing)
 
