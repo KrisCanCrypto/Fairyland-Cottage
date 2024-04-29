@@ -103,6 +103,7 @@ textarea {
   border: 1px solid var(--main-color);
 }
 
+/* To help visual on contact form for screens bigger then 425px but less then 768px */
 @media screen and (min-width: 425px) {
   #contact > h2 {
     font-size: 90%;

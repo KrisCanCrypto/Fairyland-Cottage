@@ -30,8 +30,8 @@
   }
 }
 
+/* To add an extra column to image galley */
 @media screen and (min-width: 1024px) {
-
   /* Gallery */
   #photos {
     column-gap: 1px;
@@ -41,7 +41,6 @@
 
 /* 4k screens */
 @media screen and (min-width: 2560px) {
-
   main {
     margin-top: 290px;
   }

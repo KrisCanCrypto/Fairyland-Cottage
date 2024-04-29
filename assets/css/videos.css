@@ -12,6 +12,7 @@
   --font-color2: #e9ead6;
 }
 
+/* video sections layout mobile devices */
 .video-section {
   margin: 0 auto;
   margin-right: 61px;
@@ -41,6 +42,7 @@
   line-height: 120%;
 }
 
+/* The element which contains the videos */
 .container {
   display: flex;
   flex-direction: column;
@@ -57,6 +59,7 @@
   box-shadow: 3px 3px 15px rgba(0, 00, 0, 0.6);
 }
 
+/* Color change to split video sections */
 .middle {
   background-color: var(--font-color1);
   color: var(--font-color2);
@@ -66,10 +69,12 @@
   border: 1px solid var(--font-color1);
 }
 
+/* Hide radio buttons */
 input {
   display: none;
 }
 
+/* Adjust design for larger screens */
 @media screen and (min-width: 768px) {
   .video-section {
     margin: 0;
@@ -91,6 +96,7 @@ input {
   }
 
   /* Video sections */
+  /* A grid display to stack videos to create a slider */
   .container {
     display: grid;
     grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px 100px;
@@ -98,6 +104,7 @@ input {
     width: 100%;
     padding: 20px;
     margin: 20px 0;
+    /*When videos side they are hidden */
     overflow: hidden;
   }
 
@@ -107,6 +114,7 @@ input {
     height: 400px;
     width: 100%;
     max-width: 700px;
+    /* Timing of the sidlers movement */
     transition: all 3s ease;
   }
 
@@ -125,6 +133,7 @@ input {
     margin: 5px;
   }
 
+  /* Selection dots to choose video */
   .dots label {
     height: 15px;
     width: 15px;
@@ -188,6 +197,7 @@ input {
   }
 }
 
+/* Adjustment to styling to help visual appearance for bigger screens */
 @media screen and (min-width: 1600px) {
   .text {
     padding-top: 20px;
@@ -202,6 +212,7 @@ input {
   }
 }
 
+/* 4k screens */
 @media screen and (min-width: 2560px) {
   .video-section {
     height: 90vh;
@@ -214,6 +225,7 @@ input {
     margin-bottom: 40px;
   }
 
+  /* Expand container size to adjust video display for 4K screens */
   .container {
     grid-template-columns: 150px 150px 150px 150px 150px 150px 150px 150px 150px;
     grid-template-rows: 150px 150px 150px 150px;
