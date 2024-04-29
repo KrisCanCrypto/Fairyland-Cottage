@@ -283,6 +283,8 @@ On the contact page, users are provided with a contact form to communicate with 
 
 - To validate the **HTML** I used [W3 Validator](https://validator.w3.org).
 
+( **Side note:** The concealed messages found on each page pertain to the implementation of Prettier formatting within the local Integrated Development Environment (IDE).)
+
 1.  #### Landing Page:
 
     <img src="assets/images/landing-page.webp" width="400px" alt="landing page validation">
@@ -324,6 +326,9 @@ On the contact page, users are provided with a contact form to communicate with 
 <hr>
 
 ### Lighthouse Results
+
+**NOTE:**
+After utilizing XConvert to compress all images on the website, I subsequently conducted another round of Lighthouse testing to assess the overall performance of the website on both mobile and desktop platforms.<br> _(The second test are black backgrounds)_
 
 1.  #### Landing Page:
 
