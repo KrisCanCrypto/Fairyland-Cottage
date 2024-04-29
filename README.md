@@ -370,7 +370,7 @@ This project is deployed using GitHub Pages. This section provides information o
 
 To access click on the link and visit [Fairyland Cottage](https://terryloc.github.io/Fairyland-Cottage/).
 
-### How to Deploy
+### How to clone a repository
 
 1. Fork the repository by clicking the "Fork" button at the top of the repository page.
 2. Clone the forked repository to your local machine using the `git clone` command.
@@ -387,6 +387,19 @@ To access click on the link and visit [Fairyland Cottage](https://terryloc.githu
 5. Navigate to the repository settings on GitHub.
 6. Under the GitHub Pages section, choose the main branch as the source and save the changes.
 7. Your site will be published and accessible at `https://your-username.github.io/Fairyland-Cottage/`.
+
+### How to deploy locally
+
+To deploy a GitHub repository to your local computer by downloading it, follow these steps:
+
+1. Go to the GitHub repository that you want to deploy.
+2. Click on the green "Code" button located on the right side of the repository.
+3. In the dropdown menu, select the "Download ZIP" option.
+4. Once the ZIP file is downloaded, extract its contents to a location on your local computer.
+5. Open your preferred code editor and navigate to the folder where you extracted the repository.
+6. You can now make changes to the code and work on the project locally.
+
+Please note that this method will not allow you to easily sync changes between your local repository and the GitHub repository. If you want to push changes back to the GitHub repository, it is recommended to use git commands and set up a local git repository for the project.
 
 ## [Credits](#credits)
 
