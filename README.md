@@ -4,7 +4,7 @@
 
 ## Description
 
-This project website is a resource for individuals interested in living a simple and sustainable lifestyle. It offers a variety of information on topics such as healthy recipes, homemade natural products, DIY projects, and zero waste living. Whether you are a seasoned follower of the _Fairyland Cottage_ or a newcomer looking to learn more, this website provides valuable insights and inspiration for anyone interested in simplifying their life.
+This project website is a resource for individuals interested in living a simple and sustainable lifestyle. It offers a variety of information on topics such as healthy recipes, homemade natural products, DIY projects, and zero waste living. Whether you are a seasoned follower of the _[Fairyland Cottage](https://terryloc.github.io/Fairyland-Cottage/)_ or a newcomer looking to learn more, this website provides valuable insights and inspiration for anyone interested in simplifying their life.
 
 <img src="assets/images/visualdisplay.webp" alt="appearance" width="500px" margin=" 0 auto"/>
 
