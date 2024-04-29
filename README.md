@@ -293,80 +293,62 @@ On the contact page, users are provided with a contact form to communicate with 
 
     On first test I found an error regarding **alt** on all iframe elements -
 
-    <img src="assets/images/error-video-page.webp" width="400px" alt="landing page validation">
+    <img src="assets/images/error-video-page.webp" width="400px" alt="video page validation">
 
     To solve the error I changed **alt** to **name** -
 
-    <img src="assets/images/video-page.webp" width="400px" alt="landing page validation">
+    <img src="assets/images/video-page.webp" width="400px" alt="video page validation fix">
 
 3.  #### Gallery Page:
 
-    <img src="assets/images/gallery-page.webp" width="400px" alt="landing page validation">
+    <img src="assets/images/gallery-page.webp" width="400px" alt="gallery page validation">
 
 4.  #### Contact Page:
-    <img src="assets/images/contact-page.webp" width="400px" alt="landing page validation">
+    <img src="assets/images/contact-page.webp" width="400px" alt="contact page validation">
 
 - To validate the **CSS** I use [CSS Validator](https://jigsaw.w3.org/css-validator/)
 
 1.  #### Landing Page:
 
-    <img src="assets/images/index-css.webp.png" width="400px" alt="landing page validation">
+    <img src="assets/images/index-css.webp.png" width="400px" alt="landing page CSS validation">
 
 2.  #### Video Page: <br>
 
-    <img src="assets/images/video-css.webp.png" width="400px" alt="landing page validation">
+    <img src="assets/images/video-css.webp.png" width="400px" alt="video page CSS validation">
 
 3.  #### Gallery Page:
 
-    <img src="assets/images/gallery-css.webp.png" width="400px" alt="landing page validation">
+    <img src="assets/images/gallery-css.webp.png" width="400px" alt="gallery page CSS validation">
 
 4.  #### Contact Page:
-    <img src="assets/images/contact-css.webp.png" width="400px" alt="landing page validation">
+    <img src="assets/images/contact-css.webp.png" width="400px" alt="contact page CSS validation">
 
 <hr>
 
 ### Lighthouse Results
 
 **NOTE:**
-After utilizing XConvert to compress all images on the website, I subsequently conducted another round of Lighthouse testing to assess the overall performance of the website on both mobile and desktop platforms.<br> _(The second test are black backgrounds)_
+After utilizing XConvert to compress all images on the website, I subsequently conducted another round of Lighthouse testing to assess the overall performance of the website on both mobile and desktop platforms.
 
-1.  #### Landing Page:
+#### **_First Testing_**
 
-    ##### Mobile -
+|                        Mobile                        |  Pages  |                       Desktop                        |
+| :--------------------------------------------------: | :-----: | :--------------------------------------------------: |
+| ![index mobile](assets/images/index-lighthouse.webp) | Landing |  ![index desktop](assets/images/index-desktop.webp)  |
+|   ![index mobile](assets/images/video-mobile.webp)   | Videos  |  ![index desktop](assets/images/video-desktop.webp)  |
+|  ![index mobile](assets/images/gallery-mobile.webp)  | Gallery | ![index desktop](assets/images/gallery-desktop.webp) |
+|  ![index mobile](assets/images/contact-mobile.webp)  | Contact | ![index desktop](assets/images/contact-desktop.webp) |
 
-       <img src="assets/images/index-lighthouse.webp" width="400px" alt="landing page validation">
-      
-    ##### Desktop - 
-      <img src="assets/images/index-desktop.webp" width="400px" alt="landing page validation">
+<br>
 
-2.  #### Video Page:
+#### **_Second Testing_**
 
-    ##### Mobile -
-
-    <img src="assets/images/video-mobile.webp" width="400px" alt="landing page validation">
-      
-      ##### Desktop - 
-    <img src="assets/images/video-desktop.webp" width="400px" alt="landing page validation">
-
-3.  #### Gallery Page:
-
-    ##### Mobile -
-
-       <img src="assets/images/gallery-mobile.webp" width="400px" alt="landing page validation">
-      
-    ##### Desktop - 
-      <img src="assets/images/gallery-desktop.webp" width="400px" alt="landing page validation">
-
-4.  #### Contact Page:
-
-    ##### Mobile -
-
-       <img src="assets/images/contact-mobile.webp" width="400px" alt="landing page validation">
-      
-    ##### Desktop - 
-      <img src="assets/images/contact-desktop.webp" width="400px" alt="landing page validation">
-
-<hr>
+|                        Mobile                        |  Pages  |                         Desktop                          |
+| :--------------------------------------------------: | :-----: | :------------------------------------------------------: |
+|  ![index mobile](assets/images/new-index-test.webp)  | Landing |  ![index desktop](assets/images/new-index-desktop.webp)  |
+| ![index mobile](assets/images/new-videos-test.webp)  | Videos  |  ![index desktop](assets/images/new-video-desktop.webp)  |
+| ![index mobile](assets/images/new-gallery-test.webp) | Gallery | ![index desktop](assets/images/new-gallery-desktop.webp) |
+| ![index mobile](assets/images/new-contact-test.webp) | Contact | ![index desktop](assets/images/new-contact-desktop.webp) |
 
 ### General Testing & Bugs
 
@@ -375,6 +357,8 @@ After utilizing XConvert to compress all images on the website, I subsequently c
 - In the event of a page loading issue, I have implemented a 404.html page to redirect users to an alternative page and offer apologies for any inconvenience caused by the site's loading error.
 
 - The Gallery page experiences slow load times due to high-quality images. By converting all images from .jpg to .webp format, an improvement in speed was observed.
+
+-
 
 ## [Deployment](#deployment)
 
