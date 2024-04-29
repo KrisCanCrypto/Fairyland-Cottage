@@ -74,6 +74,14 @@ input {
   display: none;
 }
 
+/* Adjust visual display for screens bigger then 550px but less then 768px */
+@media screen and (min-width: 550px) {
+  .video {
+    min-width: 70%;
+    height: 250px;
+  }
+}
+
 /* Adjust design for larger screens */
 @media screen and (min-width: 768px) {
   .video-section {
