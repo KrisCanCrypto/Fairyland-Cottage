@@ -35,7 +35,7 @@ This project website is a resource for individuals interested in living a simple
 I wanted a website for users old and new to able explore the world of _Fairyland Cottage_ without having to go to different sites / apps. If they wish to see more they have the option through our links provided.
 On the home page we give a warming welcome note and a insight into simply living. This allows the new user to get a strong understanding of what information is available.
 
-#### Users views
+#### [Users views](#users-views)
 
 1. As a user, I want to easily navigate through the website to find the information I am looking for, so I can quickly access the world of _Fairyland Cottage_ resources on simple living and sustainability.
 
@@ -137,7 +137,7 @@ On the home page we give a warming welcome note and a insight into simply living
 
 ##### 768px & up Navbar
 
-- The navbar design for screens 768px & up prioritizes simplicity, cleanliness, and minimalism. It effectively guides users with links to each page, ensuring easy navigation. Additionally, the inclusion of an image logo offers users a quick way to return to the home page from any section of the website.
+- The navbar design for screens 768px & up prioritizes simplicity, cleanliness, and minimalism. Here the user can easily navigate through the website as targeted in no.1 of [user views](#users-views). It effectively guides users with links to each page, ensuring easy navigation. Additionally, the inclusion of an image logo offers users a quick way to return to the home page from any section of the website.
 
   ![alt img](assets/images/navbar-768px.webp)
 
@@ -174,7 +174,7 @@ The landing page displays one of two hero images located in the [images](#images
 
   <br>
 
-  2. This section highlights the principles of a simple living ethos, emphasizing the importance of sustainable practices such as minimalism, waste reduction and renewable resources. It underscores the benefits of simplifying our lives, focusing on what matters most, and integrating nature into our daily routines to promote a more sustainable and fulfilling lifestyle for both individuals and the environment.
+  2. This section highlights the principles of a simple living ethos, emphasizing the importance of sustainable practices such as minimalism, waste reduction and renewable resources. Here I achieve what is set out in [user views](#users-views) no.2. <br>It underscores the benefits of simplifying our lives, focusing on what matters most, and integrating nature into our daily routines to promote a more sustainable and fulfilling lifestyle for both individuals and the environment.
 
      <img src="assets/images/simple-living.webp" alt="Simple living ethos" width="500"/>
 
@@ -203,7 +203,7 @@ For small devices, a revised layout has been implemented to optimize the horizon
 
 **- Video Category's**
 
-1.  The first video section intermittently presents a substantial challenge for some users, as they may lack the necessary information, support, or guidance to navigate this aspect effectively. In response, I have curated a selection of calming and motivational videos to ease users into the process and demonstrate that success in this area is within reach.<br><br><img src="assets/images/zero-waste.webp" alt="zero waste videos" width="400"/>
+1.  The first video section intermittently presents a substantial challenge for some users, as they may lack the necessary information, support, or guidance to navigate this aspect effectively. Here we offer an answer to [user views](#users-views) no.3 to discover tips and ideas for zero waste.<br> In response, I have curated a selection of calming and motivational videos to ease users into the process and demonstrate that success in this area is within reach.<br><br><img src="assets/images/zero-waste.webp" alt="zero waste videos" width="400"/>
     <br><br>
 2.  The second video section provides users with an illustration of the simplicity and benefits of a peaceful lifestyle. These videos offer a glimpse into a tranquil way of living.<br><br><img src="assets/images/video-section-2.webp" alt="Simple Living" width="400"/>
     <br><br>
