@@ -20,3 +20,6 @@ document
       }
     };
   });
+
+// Reset the form
+this.reset();
