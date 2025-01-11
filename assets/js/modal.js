@@ -1,3 +1,4 @@
+// filepath: /Users/terryloughran/Desktop/Fairyland-Cottage/assets/js/modal.js
 document
   .getElementById('contact-form')
   .addEventListener('submit', function (event) {
@@ -20,6 +21,19 @@ document
       }
     };
 
+    // Send form data using EmailJS
+    emailjs
+      .sendForm('service_j5oer3j', 'template_q6h7j1h', this) // Replace 'YOUR_TEMPLATE_ID' with your actual template ID
+      .then(
+        function (response) {
+          console.log('SUCCESS!', response.status, response.text);
+          // Reset the form
+          event.target.reset();
+        },
+        function (error) {
+          console.log('FAILED...', error);
+        }
+      );
     // Reset the form
     this.reset();
   });

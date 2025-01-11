@@ -55,7 +55,7 @@ textarea {
 }
 
 .text-input::placeholder,
-#question::placeholder {
+#message::placeholder {
   color: rgba(233, 234, 214, 0.6);
   font-size: 80%;
 }
@@ -74,7 +74,7 @@ textarea {
 }
 
 .text-input,
-#question {
+#message {
   background: transparent;
   color: var(--font-color2);
   width: 100%;
@@ -182,7 +182,7 @@ textarea {
   }
 
   .text-input::placeholder,
-  #question::placeholder {
+  #message::placeholder {
     font-size: 80%;
   }
 }
@@ -214,7 +214,7 @@ textarea {
     height: 50px;
   }
 
-  #question {
+  #message {
     padding: 20px 10px;
     height: 200px;
   }

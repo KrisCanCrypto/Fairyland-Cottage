@@ -107,21 +107,17 @@
       <h2 class="hidden-heading">Contact form</h2>
       <section id="contact">
         <h2>
-          <i class="fa-solid fa-leaf fa-flip-horizontal"></i> say hello<i
-            class="fa-solid fa-leaf"></i>
+          <i class="fa-solid fa-leaf fa-flip-horizontal"></i> say hello
+          <i class="fa-solid fa-leaf"></i>
         </h2>
         <p>I&#39;d love to hear from you!</p>
         <!-- Contact form -->
-        <form
-          method="POST"
-          id="contact-form"
-          netlify
-          onsubmit="showModal(event)">
+        <form id="contact-form">
           <label for="first-name">First Name:</label>
           <input
             type="text"
             id="first-name"
-            name="first-name"
+            name="first_name"
             placeholder="Joe"
             class="text-input"
             required />
@@ -130,29 +126,30 @@
           <input
             type="text"
             id="last-name"
-            name="last-name"
+            name="last_name"
             placeholder="Blogs"
             class="text-input"
             required />
 
-          <label for="email-address">Email Address:</label>
+          <label for="email">Email:</label>
           <input
             type="email"
-            id="email-address"
-            name="email-address"
+            id="email"
+            name="email"
             placeholder="joeblogs@email.com"
             class="text-input"
             required />
-          <label id="subject">Subject:</label>
+
+          <label for="message">Message:</label>
           <textarea
-            name="subject"
-            id="question"
+            id="message"
+            name="message"
             cols="25"
             rows="7"
             placeholder="Type your message..."
             required></textarea>
           <br />
-          <input type="submit" class="send-button" value="Send Mail" />
+          <button type="submit" class="send-button">Send</button>
         </form>
       </section>
     </main>
@@ -199,5 +196,14 @@
 
     <!-- JavaScript for modal -->
     <script src="assets/js/modal.js"></script>
+    <!-- filepath: /Users/terryloughran/Desktop/Fairyland-Cottage/contact.html -->
+    <script
+      type="text/javascript"
+      src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init('gZ8YpkFq6fNcY2fqk');
+      })();
+    </script>
   </body>
 </html>
