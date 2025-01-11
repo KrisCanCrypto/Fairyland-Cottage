@@ -19,7 +19,7 @@ document
         modal.style.display = 'none';
       }
     };
-  });
 
-// Reset the form
-this.reset();
+    // Reset the form
+    this.reset();
+  });
