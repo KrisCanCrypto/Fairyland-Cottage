@@ -38,6 +38,7 @@ h3 {
 
 .top-header {
   display: none;
+  text-decoration: none !important; 
 }
 
 .hidden-heading {
@@ -126,8 +127,10 @@ h3 {
 /* visual indicator to let user know which link is being triggered */
 #menu-bar a:hover {
   color: var(--font-color2);
-  text-decoration: underline;
+  text-shadow: 1px 1px 1px var(--font-color1);
   cursor: pointer;
+  transition: 0.2s ease-in;
+
 }
 
 /* Social links */
@@ -269,9 +272,16 @@ footer {
   }
 
   .top-header a {
-    text-decoration: none !important;
+    text-decoration: none !important; /* Remove underline */
     color: inherit;
   }
+
+  .top-header a:hover {
+    color: var(--font-color2);
+    text-shadow: 1px 1px 1px var(--font-color1);
+    text-decoration: none !important; /* Remove underline */
+    cursor: pointer;
+}
 
   #title {
     font-weight: 500;
@@ -405,6 +415,7 @@ footer {
 
   .top-header a {
     font-size: 120%;
+    text-decoration: none !important; /* Remove underline */
   }
 
   /* landing Page */
