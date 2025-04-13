@@ -1,18 +1,21 @@
 // filepath: /Users/terryloughran/Desktop/Fairyland-Cottage/assets/js/modal.js
-document
-  .getElementById('contact-form')
-  .addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent the default form submission
 
-    // Show the modal
-    var modal = document.getElementById('emailSentModal');
+// Contact form submission (unchanged)
+document.getElementById('contact-form')?.addEventListener('submit', function (event) {
+  event.preventDefault(); // Prevent the default form submission
+
+  // Show the modal
+  var modal = document.getElementById('emailSentModal');
+  if (modal) {
     modal.style.display = 'block';
 
     // Close the modal when the user clicks on the close button
     var closeButton = document.getElementsByClassName('close-button')[0];
-    closeButton.onclick = function () {
-      modal.style.display = 'none';
-    };
+    if (closeButton) {
+      closeButton.onclick = function () {
+        modal.style.display = 'none';
+      };
+    }
 
     // Close the modal when the user clicks anywhere outside of the modal
     window.onclick = function (event) {
@@ -23,7 +26,7 @@ document
 
     // Send form data using EmailJS
     emailjs
-      .sendForm('service_j5oer3j', 'template_q6h7j1h', this) // Replace 'YOUR_TEMPLATE_ID' with your actual template ID
+      .sendForm('service_j5oer3j', 'template_q6h7j1h', this)
       .then(
         function (response) {
           console.log('SUCCESS!', response.status, response.text);
@@ -36,4 +39,19 @@ document
       );
     // Reset the form
     this.reset();
-  });
+  }
+});
+
+// Initialize Bootstrap Carousel
+document.addEventListener('DOMContentLoaded', function () {
+  const myCarouselElement = document.querySelector('#testimonials');
+  if (myCarouselElement) {
+    const carousel = new bootstrap.Carousel(myCarouselElement, {
+      interval: 2000, // 2-second interval
+      touch: true, // Enable touch swiping
+      wrap: true // Allow looping (default, included for clarity)
+    });
+  } else {
+    console.warn('Carousel element with ID "testimonials" not found.');
+  }
+});

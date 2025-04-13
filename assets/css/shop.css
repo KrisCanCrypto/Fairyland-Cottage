@@ -1,0 +1,144 @@
+:root {
+  /* color: Timberwolf */
+  --main-color: #ded5cd;
+  /* color: Linen */
+  --secondary-color: #f3eae2;
+  /* color: Dark moss-green */
+  --font-color1: #41462d;
+  /* color: Beige */
+  --font-color2: #e9ead6;
+}
+
+/* Shop */
+h2 {
+  margin: 40px 35px 40px;
+  width: 70%;
+  font-size: 125%;
+  text-align: center;
+}
+
+p {
+  font-size: 1.1rem;
+  margin-top: 10px;
+  text-align: center;
+  line-height: 115%;
+  width: 70%;
+  margin: 40px 30px 40px;
+}
+
+.note {
+  font-size: 0.9rem;
+  margin-top: 50px;
+  font-weight: 700;
+}
+
+/* Paypal */
+.pp-ZD9ZDFDDVSBMQ {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: -35px;
+}
+
+form section {
+  margin-top: 5px;
+}
+
+/* Button */
+.buy-button {
+  width: 50%;
+  color: var(--font-color1);
+  background-color: #e9e7b7;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 15px;
+  font-family: 'Josefin Slab', serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* dynamically change its color */
+.buy-button:hover {
+  transition: 0.2s ease-in;
+  color: #e9e7b7;
+  background-color: var(--font-color1);
+  border: -1px solid var(--main-color);
+}
+
+/* Testimonials Carousel */
+.carousel-caption p {
+  width: 100%; /* Override global p width */
+  margin: 0 auto; /* Reset margins to center captions */
+  text-align: center; /* Maintain alignment */
+  font-size: 1rem; /* Adjust if needed for readability */
+  line-height: 1.5; /* Improve readability */
+}
+
+.carousel-caption {
+  bottom: 20px; /* Ensure captions don’t overlap controls */
+  padding: 10px; /* Add padding for clarity */
+}
+
+/* Ensure carousel images are responsive */
+.carousel-item img {
+  max-height: 500px; /* Optional: Limit image height for consistency */
+  object-fit: cover; /* Ensure images fit without distortion */
+}
+
+/* Footer */
+footer {
+  display: block;
+}
+
+#social-links2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  text-align: center;
+  align-items: center;
+  border-top: 1px solid var(--font-color1);
+  background-color: var(--main-color);
+  list-style-type: none;
+  margin-bottom: 0;
+}
+
+#social-links2 p {
+  font-size: 0.8rem;
+}
+
+ul {
+  padding-left: 0;
+}
+
+h1 {
+  margin-bottom: 0;
+}
+
+#social-links2 i {
+  margin-top: 0;
+  font-size: 2.5rem;
+  padding: 8px;
+  color: var(--font-color1);
+}
+
+/* Media query: large or landscape phones 576px & up */
+@media screen and (min-width: 720px) {
+  h2 {
+    margin: 50px auto 20px;
+    width: 90%;
+  }
+  p {
+    width: 80%;
+    margin: 50px auto 20px;
+  }
+  /* Ensure carousel captions remain unaffected */
+  .carousel-caption p {
+    width: 90%; /* Slightly narrower on larger screens */
+    font-size: 1.1rem;
+  }
+}
