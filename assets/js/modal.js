@@ -41,17 +41,3 @@ document.getElementById('contact-form')?.addEventListener('submit', function (ev
     this.reset();
   }
 });
-
-// Initialize Bootstrap Carousel
-document.addEventListener('DOMContentLoaded', function () {
-  const myCarouselElement = document.querySelector('#testimonials');
-  if (myCarouselElement) {
-    const carousel = new bootstrap.Carousel(myCarouselElement, {
-      interval: 2000, // 2-second interval
-      touch: true, // Enable touch swiping
-      wrap: true // Allow looping (default, included for clarity)
-    });
-  } else {
-    console.warn('Carousel element with ID "testimonials" not found.');
-  }
-});
