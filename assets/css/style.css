@@ -38,6 +38,7 @@ h3 {
 
 .top-header {
   display: none;
+  text-decoration: none !important; 
 }
 
 .hidden-heading {
@@ -126,8 +127,10 @@ h3 {
 /* visual indicator to let user know which link is being triggered */
 #menu-bar a:hover {
   color: var(--font-color2);
-  text-decoration: underline;
+  text-shadow: 1px 1px 1px var(--font-color1);
   cursor: pointer;
+  transition: 0.2s ease-in;
+
 }
 
 /* Social links */
@@ -156,7 +159,7 @@ h3 {
 
 /* small and mobile device screens image */
 #hero-img {
-  background: url(../images/smallscreen.webp) center center/cover;
+  background: url(../images/webimages/smallscreen.webp) center center/cover;
   width: 100%;
   height: 100vh;
   position: relative;
@@ -164,7 +167,7 @@ h3 {
 
 /* desktop screen image */
 #big-hero {
-  background: url(../images/house.webp) center center/cover;
+  background: url(../images/webimages/house.webp) center center/cover;
   width: 100%;
   height: 100vh;
   position: relative;
@@ -269,9 +272,16 @@ footer {
   }
 
   .top-header a {
-    text-decoration: none !important;
+    text-decoration: none !important; /* Remove underline */
     color: inherit;
   }
+
+  .top-header a:hover {
+    color: var(--font-color2);
+    text-shadow: 1px 1px 1px var(--font-color1);
+    text-decoration: none !important; /* Remove underline */
+    cursor: pointer;
+}
 
   #title {
     font-weight: 500;
@@ -303,12 +313,13 @@ footer {
 
   #menu-bar2 ul li {
     margin: 20px 20px 10px;
+
   }
 
   #menu-bar2 ul li:hover {
     color: var(--font-color2);
-    text-decoration: underline;
     cursor: pointer;
+    text-decoration: none !important;
   }
 
   /* Main */
@@ -381,6 +392,7 @@ footer {
 
   #social-links2 p {
     font-size: 0.8rem;
+    margin-bottom: 0;
   }
 
   #social-links2 i {
@@ -405,6 +417,7 @@ footer {
 
   .top-header a {
     font-size: 120%;
+    text-decoration: none !important; /* Remove underline */
   }
 
   /* landing Page */
