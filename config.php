@@ -8,10 +8,27 @@ define('DOWNLOAD_SECRET', 'change-this-to-a-long-random-secret-string');
 define('PRICE', '9.99');
 define('CURRENCY', 'EUR');
 define('PRODUCT_NAME', 'Fairyland Cottage Book Bundle');
-define('SUCCESS_URL', 'https://fairylandcottage.com/success.php');
-define('CANCEL_URL', 'https://fairylandcottage.com/shop');
-define('PRIVATE_DOWNLOADS_DIR', '/home/YOUR_SERVER_USER/private_downloads');
+
+$detectedScheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+$detectedHost = $_SERVER['HTTP_HOST'] ?? 'fairylandcottage.com';
+$baseUrl = getenv('SITE_BASE_URL') ?: ($detectedScheme . '://' . $detectedHost);
+
+define('SUCCESS_URL', $baseUrl . '/success.php');
+define('CANCEL_URL', $baseUrl . '/shop.html');
+
+$configuredPrivateDir = getenv('PRIVATE_DOWNLOADS_DIR') ?: '/home/YOUR_SERVER_USER/private_downloads';
+$localPrivateDir = __DIR__ . '/private_downloads';
+$privateDownloadsDir = is_dir($configuredPrivateDir) ? $configuredPrivateDir : $localPrivateDir;
+
+$bookPrimary = $privateDownloadsDir . '/fairyland-book.pdf';
+$audioPrimary = $privateDownloadsDir . '/fairyland-audiobook.wav';
+
+// Local fallback names currently present in this repository.
+$bookFallback = $privateDownloadsDir . '/My Journey to Simple, Sustainable Living -  ebook.pdf.pdf';
+$audioFallback = $privateDownloadsDir . '/My Journey to Simple, Sustainable Living - Audiobook.wav';
+
+define('PRIVATE_DOWNLOADS_DIR', $privateDownloadsDir);
 define('FILE_PATHS', [
-    'book' => PRIVATE_DOWNLOADS_DIR . '/fairyland-book.pdf',
-    'audio' => PRIVATE_DOWNLOADS_DIR . '/fairyland-audiobook.wav',
+    'book' => file_exists($bookPrimary) ? $bookPrimary : $bookFallback,
+    'audio' => file_exists($audioPrimary) ? $audioPrimary : $audioFallback,
 ]);
