@@ -15,11 +15,7 @@ function webhook_log($msg) {
 
 // Read incoming request body and headers
 $body = file_get_contents('php://input');
-<<<<<<< HEAD
-$headers = getallheaders();
-=======
 $headers = function_exists('getallheaders') ? getallheaders() : [];
->>>>>>> b0b7f7b (New site working)
 $json = json_decode($body, true);
 
 // Environment configuration
