@@ -7,6 +7,10 @@ $valid = false;
 $buyer_email = '';
 // allowed_files_map will be an associative array: basename => remaining_count
 $allowed_files_map = [];
+<<<<<<< HEAD
+=======
+$allowed_files = [];
+>>>>>>> b0b7f7b (New site working)
 // If SQLite helper exists, use it; otherwise fallback to tokens.txt
 $use_db = file_exists(__DIR__ . '/lib/db.php');
 if ($use_db) {
@@ -21,7 +25,12 @@ if ($use_db) {
         }
     }
 } else {
+<<<<<<< HEAD
     $tokens = file('tokens.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+=======
+    $tokens_file = __DIR__ . '/tokens.txt';
+    $tokens = file_exists($tokens_file) ? file($tokens_file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES) : [];
+>>>>>>> b0b7f7b (New site working)
 }
 
 if (!$use_db) {
@@ -85,6 +94,13 @@ if (!$use_db) {
     }
 }
 
+<<<<<<< HEAD
+=======
+if ($valid && empty($allowed_files)) {
+    $allowed_files = array_keys($allowed_files_map);
+}
+
+>>>>>>> b0b7f7b (New site working)
 // If a file parameter is present and token is valid, stream the file directly
 if ($valid && isset($_GET['file'])) {
     $requested = basename($_GET['file']);
@@ -168,7 +184,11 @@ if ($valid && isset($_GET['file'])) {
                 // no remaining files: token is consumed (do not add back)
             }
         }
+<<<<<<< HEAD
         file_put_contents('tokens.txt', implode("\n", $new_lines) . (count($new_lines) ? "\n" : ""), LOCK_EX);
+=======
+        file_put_contents(__DIR__ . '/tokens.txt', implode("\n", $new_lines) . (count($new_lines) ? "\n" : ""), LOCK_EX);
+>>>>>>> b0b7f7b (New site working)
     }
 
     // Determine MIME type where possible

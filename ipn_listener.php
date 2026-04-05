@@ -2,8 +2,22 @@
 // File: ipn_listener.php
 // Purpose: Handle PayPal IPN, verify payment, and email Google Drive download links
 
+<<<<<<< HEAD
 // Read POST data from PayPal
 $raw_post_data = file_get_contents('php://input');
+=======
+function ipn_log($message) {
+    $logs_dir = __DIR__ . '/logs';
+    if (!is_dir($logs_dir)) {
+        mkdir($logs_dir, 0755, true);
+    }
+    file_put_contents($logs_dir . '/ipn_listener.log', '[' . date('c') . '] ' . $message . "\n", FILE_APPEND | LOCK_EX);
+}
+
+// Read POST data from PayPal
+$raw_post_data = file_get_contents('php://input');
+ipn_log('IPN hit. Raw bytes=' . strlen($raw_post_data));
+>>>>>>> b0b7f7b (New site working)
 $raw_post_array = explode('&', $raw_post_data);
 $myPost = [];
 foreach ($raw_post_array as $keyval) {
@@ -28,6 +42,7 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 1);
 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
 curl_setopt($ch, CURLOPT_HTTPHEADER, ['Connection: Close']);
 $res = curl_exec($ch);
+<<<<<<< HEAD
 curl_close($ch);
 
 // Check if payment is verified and completed
@@ -36,6 +51,28 @@ $is_test = isset($myPost['test']) && $myPost['test'] === '1';
 if (($is_test) || (strcmp($res, 'VERIFIED') == 0 && isset($myPost['payment_status']) && $myPost['payment_status'] == 'Completed')) {
     $buyer_email = $myPost['payer_email'] ?? 'unknown@example.com';
     $item_name = $myPost['item_name'] ?? 'Purchase';
+=======
+$curl_error = curl_error($ch);
+curl_close($ch);
+
+if (!empty($curl_error)) {
+    ipn_log('PayPal verify cURL error: ' . $curl_error);
+}
+
+$res_normalized = trim((string)$res);
+ipn_log('PayPal verify response: ' . $res_normalized);
+
+// Check if payment is verified and completed
+// Allow a local test mode: if caller includes test=1 we skip PayPal verification
+$is_test = isset($myPost['test']) && $myPost['test'] === '1';
+$is_verified = ($res_normalized === 'VERIFIED');
+$is_completed = isset($myPost['payment_status']) && strtolower((string)$myPost['payment_status']) === 'completed';
+
+if (($is_test) || ($is_verified && $is_completed)) {
+    $buyer_email = $myPost['payer_email'] ?? 'unknown@example.com';
+    $item_name = $myPost['item_name'] ?? 'Purchase';
+    ipn_log('Verified completed payment for buyer=' . $buyer_email . ', item=' . $item_name);
+>>>>>>> b0b7f7b (New site working)
 
     // Generate a unique token and expiry (24 hours)
     $token = bin2hex(random_bytes(16));
@@ -61,7 +98,11 @@ if (($is_test) || (strcmp($res, 'VERIFIED') == 0 && isset($myPost['payment_statu
         // Fallback to tokens.txt legacy format
         $files_field = $pdf_filename . ':' . $downloads_per_file . ',' . $audio_filename . ':' . $downloads_per_file;
         $token_data = "$token|$buyer_email|$expiry|$files_field\n";
+<<<<<<< HEAD
         file_put_contents('tokens.txt', $token_data, FILE_APPEND | LOCK_EX);
+=======
+        file_put_contents(__DIR__ . '/tokens.txt', $token_data, FILE_APPEND | LOCK_EX);
+>>>>>>> b0b7f7b (New site working)
     }
 
     // Create per-file download URLs
@@ -80,10 +121,17 @@ if (($is_test) || (strcmp($res, 'VERIFIED') == 0 && isset($myPost['payment_statu
     $message .= "If you have issues, contact info@fairylandcottage.com\n";
 
     // Ensure logs directory exists and write the raw email to a log for local testing
+<<<<<<< HEAD
     if (!is_dir('logs')) mkdir('logs', 0755, true);
     $from = 'info@fairylandcottage.com';
     $log_entry = "[" . date('c') . "] To: $buyer_email\nSubject: $subject\nFrom: $from\n\n$message\n----\n";
     file_put_contents('logs/sent_emails.log', $log_entry, FILE_APPEND | LOCK_EX);
+=======
+    if (!is_dir(__DIR__ . '/logs')) mkdir(__DIR__ . '/logs', 0755, true);
+    $from = 'info@fairylandcottage.com';
+    $log_entry = "[" . date('c') . "] To: $buyer_email\nSubject: $subject\nFrom: $from\n\n$message\n----\n";
+    file_put_contents(__DIR__ . '/logs/sent_emails.log', $log_entry, FILE_APPEND | LOCK_EX);
+>>>>>>> b0b7f7b (New site working)
 
     // If PHPMailer is available and SMTP env vars are set, send via SMTP
     if (file_exists(__DIR__ . '/vendor/autoload.php')) {
@@ -112,9 +160,26 @@ if (($is_test) || (strcmp($res, 'VERIFIED') == 0 && isset($myPost['payment_statu
             $mail->Subject = $subject;
             $mail->Body = $message;
             $mail->send();
+<<<<<<< HEAD
         } catch (Exception $e) {
             // Log the PHPMailer error but continue (we already logged email)
             file_put_contents('logs/sent_emails.log', "[".date('c')."] PHPMailer error: " . $e->getMessage() . "\n", FILE_APPEND | LOCK_EX);
+=======
+            ipn_log('PHPMailer send success to ' . $buyer_email);
+        } catch (Exception $e) {
+            // Log the PHPMailer error but continue (we already logged email)
+            file_put_contents(__DIR__ . '/logs/sent_emails.log', "[".date('c')."] PHPMailer error: " . $e->getMessage() . "\n", FILE_APPEND | LOCK_EX);
+            ipn_log('PHPMailer error: ' . $e->getMessage());
+
+            if (function_exists('mail')) {
+                $headers = "From: $from\r\n";
+                $headers .= "Reply-To: $from\r\n";
+                $headers .= "Bcc: $from\r\n";
+                $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+                $mail_ok = @mail($buyer_email, $subject, $message, $headers);
+                ipn_log('Fallback mail() after PHPMailer error result=' . ($mail_ok ? 'success' : 'failure'));
+            }
+>>>>>>> b0b7f7b (New site working)
         }
     } else {
         // Fallback to PHP mail() if available
@@ -123,8 +188,21 @@ if (($is_test) || (strcmp($res, 'VERIFIED') == 0 && isset($myPost['payment_statu
         $headers .= "Bcc: $from\r\n";
         $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
         if (function_exists('mail')) {
+<<<<<<< HEAD
             @mail($buyer_email, $subject, $message, $headers);
         }
     }
+=======
+            $mail_ok = @mail($buyer_email, $subject, $message, $headers);
+            ipn_log('mail() send result=' . ($mail_ok ? 'success' : 'failure') . ' to ' . $buyer_email);
+        }
+    }
+} else {
+    ipn_log(
+        'IPN ignored. is_test=' . ($is_test ? '1' : '0') .
+        ' is_verified=' . ($is_verified ? '1' : '0') .
+        ' payment_status=' . ($myPost['payment_status'] ?? 'missing')
+    );
+>>>>>>> b0b7f7b (New site working)
 }
 ?>
