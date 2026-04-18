@@ -217,8 +217,19 @@ function fc_base64url_decode(string $value): string|false
     return base64_decode(strtr($value, '-_', '+/'), true);
 }
 
+function fc_is_download_secret_configured(): bool
+{
+    return DOWNLOAD_SECRET !== ''
+        && DOWNLOAD_SECRET !== 'change-this-to-a-long-random-secret-string'
+        && strlen(DOWNLOAD_SECRET) >= 32;
+}
+
 function fc_generate_download_token(string $fileKey, int $expires, string $orderId): string
 {
+    if (!fc_is_download_secret_configured()) {
+        throw new RuntimeException('DOWNLOAD_SECRET is not configured with a secure value.');
+    }
+
     $payload = json_encode([
         'file' => $fileKey,
         'expires' => $expires,
@@ -236,6 +247,10 @@ function fc_generate_download_token(string $fileKey, int $expires, string $order
 
 function fc_decode_download_token(string $token): array
 {
+    if (!fc_is_download_secret_configured()) {
+        return ['valid' => false, 'reason' => 'secret'];
+    }
+
     $parts = explode('.', $token, 2);
     if (count($parts) !== 2) {
         return ['valid' => false, 'reason' => 'format'];

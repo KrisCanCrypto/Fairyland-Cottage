@@ -1,13 +1,18 @@
 <?php
 declare(strict_types=1);
 
-define('PAYPAL_CLIENT_ID', 'AbNCn--Cmvb40BSzIcnAB0Kfw0HDoqVMsG7cHfgk6HQ-31CNiVhW7BfEvq8iCU3mRiq3w2rvSbTDVt-_');
-define('PAYPAL_SECRET', 'EHWpSe-3LS7lWAgKvFSHG34f7AGu8wkL7lBfhf_ACjT_-pgURDopicCzX9zhs6Cej2RSeGmm-PzOSRa4');
-define('PAYPAL_BASE_URL', 'https://api-m.sandbox.paypal.com');
-define('DOWNLOAD_SECRET', 'change-this-to-a-long-random-secret-string');
-define('PRICE', '9.99');
-define('CURRENCY', 'EUR');
-define('PRODUCT_NAME', 'Fairyland Cottage Book Bundle');
+$paypalEnv = strtolower((string) (getenv('PAYPAL_ENV') ?: 'sandbox'));
+$defaultPaypalBaseUrl = $paypalEnv === 'live'
+    ? 'https://api-m.paypal.com'
+    : 'https://api-m.sandbox.paypal.com';
+
+define('PAYPAL_CLIENT_ID', (string) (getenv('PAYPAL_CLIENT_ID') ?: ''));
+define('PAYPAL_SECRET', (string) (getenv('PAYPAL_SECRET') ?: ''));
+define('PAYPAL_BASE_URL', (string) (getenv('PAYPAL_BASE_URL') ?: $defaultPaypalBaseUrl));
+define('DOWNLOAD_SECRET', (string) (getenv('DOWNLOAD_SECRET') ?: ''));
+define('PRICE', (string) (getenv('PRODUCT_PRICE') ?: '9.99'));
+define('CURRENCY', (string) (getenv('PRODUCT_CURRENCY') ?: 'EUR'));
+define('PRODUCT_NAME', (string) (getenv('PRODUCT_NAME') ?: 'Fairyland Cottage Book Bundle'));
 
 $detectedScheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
 $detectedHost = $_SERVER['HTTP_HOST'] ?? 'fairylandcottage.com';
