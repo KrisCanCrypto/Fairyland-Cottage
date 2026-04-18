@@ -38,7 +38,7 @@ if (time() > (int) $expires) {
     fc_log_error('Expired download token', [
         'file' => $fileKey,
         'expires' => $expires,
-        'order_id' => $orderId,
+        'order_id' => $orderId !== null && $orderId !== '' ? $orderId : 'order_id_missing',
         'client_ip' => $_SERVER['REMOTE_ADDR'] ?? '',
     ]);
 
