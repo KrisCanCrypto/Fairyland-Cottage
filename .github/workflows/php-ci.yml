@@ -2,9 +2,9 @@ name: PHP CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   lint:
@@ -18,7 +18,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.1'
-          extensions: sqlite, pdo_sqlite
+          extensions: sqlite3, pdo_sqlite
 
       - name: Get Composer Cache Directory
         id: composer-cache
@@ -35,10 +35,10 @@ jobs:
           # Lint all php files except vendor
           find . -type f -name '*.php' -not -path './vendor/*' -not -path './.github/*' -print0 | xargs -0 -n1 php -l
 
-      - name: Smoke: run small runtime checks
+      - name: 'Smoke: run small runtime checks'
         run: |
           set -e
           # ensure DB helper file parses
-          php -l lib/db.php || true
-          php -l ipn_listener.php || true
-          php -l paypal_webhook.php || true
+          php -l lib/db.php
+          php -l ipn_listener.php
+          php -l paypal_webhook.php
