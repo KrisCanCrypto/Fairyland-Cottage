@@ -1,195 +1,420 @@
 <?php
-// paypal_webhook.php
-// Validates PayPal Webhook signatures and issues download tokens on completed payments.
+declare(strict_types=1);
 
-// Load DB helper if present
-if (file_exists(__DIR__ . '/lib/db.php')) {
-    require_once __DIR__ . '/lib/db.php';
+require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/lib/payment_utils.php';
+
+function webhook_log(string $message, array $context = []): void
+{
+    $logDirectory = __DIR__ . '/logs';
+    fc_ensure_directory($logDirectory);
+
+    $line = '[' . gmdate('c') . '] ' . $message;
+    if ($context !== []) {
+        $line .= ' | ' . json_encode($context, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+    }
+
+    file_put_contents($logDirectory . '/paypal_webhooks.log', $line . PHP_EOL, FILE_APPEND | LOCK_EX);
 }
 
-// Helper: write logs
-function webhook_log($msg) {
-    if (!is_dir(__DIR__ . '/logs')) mkdir(__DIR__ . '/logs', 0755, true);
-    file_put_contents(__DIR__ . '/logs/paypal_webhooks.log', "[".date('c')."] " . $msg . "\n", FILE_APPEND | LOCK_EX);
-}
+function webhook_get_header(array $headers, string $serverKey, string $headerName): string
+{
+    $serverValue = trim((string) ($_SERVER[$serverKey] ?? ''));
+    if ($serverValue !== '') {
+        return $serverValue;
+    }
 
-// Read incoming request body and headers
-$body = file_get_contents('php://input');
-$headers = function_exists('getallheaders') ? getallheaders() : [];
-$json = json_decode($body, true);
-
-// Environment configuration
-$mode = getenv('PAYPAL_MODE') ?: 'sandbox'; // 'sandbox' or 'live'
-$client_id = getenv('PAYPAL_CLIENT_ID') ?: '';
-$client_secret = getenv('PAYPAL_SECRET') ?: '';
-$webhook_id = getenv('PAYPAL_WEBHOOK_ID') ?: ''; // set this to the webhook ID PayPal shows
-$skip_verify = getenv('PAYPAL_SKIP_VERIFY') === '1';
-
-// Extract required PayPal transmission headers
-$transmission_id = $_SERVER['HTTP_PAYPAL_TRANSMISSION_ID'] ?? ($headers['Paypal-Transmission-Id'] ?? '');
-$transmission_time = $_SERVER['HTTP_PAYPAL_TRANSMISSION_TIME'] ?? ($headers['Paypal-Transmission-Time'] ?? '');
-$cert_url = $_SERVER['HTTP_PAYPAL_CERT_URL'] ?? ($headers['Paypal-Cert-Url'] ?? '');
-$auth_algo = $_SERVER['HTTP_PAYPAL_AUTH_ALGO'] ?? ($headers['Paypal-Auth-Algo'] ?? '');
-$transmission_sig = $_SERVER['HTTP_PAYPAL_TRANSMISSION_SIG'] ?? ($headers['Paypal-Transmission-Sig'] ?? '');
-
-webhook_log("Received webhook: " . ($json['event_type'] ?? json_last_error_msg()));
-
-// Determine endpoints
-if ($mode === 'live') {
-    $api_base = 'https://api-m.paypal.com';
-} else {
-    $api_base = 'https://api-m.sandbox.paypal.com';
-}
-
-// Verify webhook signature unless skipped for local dev
-$verified = false;
-if ($skip_verify) {
-    webhook_log('PAYPAL_SKIP_VERIFY enabled: skipping signature verification');
-    $verified = true;
-} else {
-    if (empty($client_id) || empty($client_secret) || empty($webhook_id)) {
-        webhook_log('Missing PAYPAL_CLIENT_ID or PAYPAL_SECRET or PAYPAL_WEBHOOK_ID; cannot verify');
-    } else {
-        // Obtain access token
-        $ch = curl_init($api_base . '/v1/oauth2/token');
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_USERPWD, $client_id . ':' . $client_secret);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, 'grant_type=client_credentials');
-        curl_setopt($ch, CURLOPT_HTTPHEADER, ['Accept: application/json', 'Accept-Language: en_US']);
-        $resp = curl_exec($ch);
-        $err = curl_error($ch);
-        curl_close($ch);
-        if ($err) {
-            webhook_log('Error obtaining access token: ' . $err);
-        } else {
-            $tok = json_decode($resp, true);
-            $access_token = $tok['access_token'] ?? '';
-            if (!$access_token) {
-                webhook_log('No access_token in token response: ' . $resp);
-            } else {
-                // Build verification payload
-                $verify_payload = [
-                    'auth_algo' => $auth_algo,
-                    'cert_url' => $cert_url,
-                    'transmission_id' => $transmission_id,
-                    'transmission_sig' => $transmission_sig,
-                    'transmission_time' => $transmission_time,
-                    'webhook_id' => $webhook_id,
-                    'webhook_event' => json_decode($body, true),
-                ];
-
-                $ch = curl_init($api_base . '/v1/notifications/verify-webhook-signature');
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-                curl_setopt($ch, CURLOPT_POST, 1);
-                curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($verify_payload));
-                curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json', 'Authorization: Bearer ' . $access_token]);
-                $vres = curl_exec($ch);
-                $verr = curl_error($ch);
-                curl_close($ch);
-                if ($verr) {
-                    webhook_log('Error verifying webhook signature: ' . $verr);
-                } else {
-                    $vobj = json_decode($vres, true);
-                    webhook_log('Verify response: ' . $vres);
-                    if (isset($vobj['verification_status']) && $vobj['verification_status'] === 'SUCCESS') {
-                        $verified = true;
-                    }
-                }
-            }
+    foreach ($headers as $name => $value) {
+        if (strcasecmp((string) $name, $headerName) === 0) {
+            return trim((string) $value);
         }
     }
+
+    return '';
 }
 
-if (!$verified) {
-    http_response_code(400);
-    echo "Invalid webhook signature\n";
-    exit;
-}
-
-// At this point the webhook is verified. Handle event types we care about.
-$event_type = $json['event_type'] ?? '';
-$resource = $json['resource'] ?? [];
-
-// Determine buyer email and a label for the item
-$buyer_email = $resource['payer']['email_address'] ?? $resource['payer']['payer_info']['email'] ?? ($resource['payer_email'] ?? null);
-$item_name = $resource['invoice_id'] ?? $json['event_type'] ?? 'PayPal Purchase';
-
-// Only act on completed payments (capture completed / sale completed / checkout order approved)
-$is_complete = false;
-if (isset($resource['status']) && in_array(strtoupper($resource['status']), ['COMPLETED','CAPTURED','APPROVED'])) $is_complete = true;
-// Some webhook types use different fields
-if ($event_type === 'CHECKOUT.ORDER.COMPLETED' || $event_type === 'CHECKOUT.ORDER.APPROVED') $is_complete = true;
-
-if ($is_complete) {
-    // Create token + email as with ipn_listener
-    $token = bin2hex(random_bytes(16));
-    $expiry = time() + (24 * 3600);
-    $pdf_filename = 'My Journey to Simple, Sustainable Living -  ebook.pdf';
-    $audio_filename = 'My Journey to Simple, Sustainable Living - Audiobook.wav';
-    $downloads_per_file = 3;
-    $files_map = [ $pdf_filename => $downloads_per_file, $audio_filename => $downloads_per_file ];
-
-    if (function_exists('init_db')) {
-        init_db();
-        insert_token_with_files($token, $buyer_email ?? 'unknown@example.com', $expiry, $files_map);
-    } else {
-        // fallback to tokens.txt
-        $files_field = $pdf_filename . ':' . $downloads_per_file . ',' . $audio_filename . ':' . $downloads_per_file;
-        file_put_contents(__DIR__ . '/tokens.txt', $token . '|' . ($buyer_email ?? 'unknown@example.com') . '|' . $expiry . '|' . $files_field . "\n", FILE_APPEND | LOCK_EX);
+function webhook_extract_payer_email(array $resource): string
+{
+    $payer = $resource['payer'] ?? null;
+    if (!is_array($payer)) {
+        return '';
     }
 
-    // Build download links
-    $host = $_SERVER['HTTP_HOST'] ?? 'fairylandcottage.com';
-    $scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
-    $base = $scheme . '://' . $host;
-    $pdf_url = $base . '/download.php?token=' . urlencode($token) . '&file=' . urlencode($pdf_filename);
-    $audio_url = $base . '/download.php?token=' . urlencode($token) . '&file=' . urlencode($audio_filename);
+    $emailAddress = trim((string) ($payer['email_address'] ?? ''));
+    if ($emailAddress !== '') {
+        return $emailAddress;
+    }
 
-    // Send email (log + PHPMailer if available)
-    $subject = "Your Fairyland Cottage Purchase";
-    $message = "Thank you for your purchase!\n\n";
-    $message .= "Download your files (links expire in 24 hours):\n";
-    $message .= "- Ebook (PDF): $pdf_url\n";
-    $message .= "- Audiobook (WAV): $audio_url\n\n";
-    $message .= "If you have issues, contact info@fairylandcottage.com\n";
+    $payerInfo = $payer['payer_info'] ?? null;
+    if (is_array($payerInfo)) {
+        $legacyEmail = trim((string) ($payerInfo['email'] ?? ''));
+        if ($legacyEmail !== '') {
+            return $legacyEmail;
+        }
+    }
 
-    webhook_log("Prepared download email for $buyer_email (token=$token)");
+    return '';
+}
 
-    // Log message for local debugging
-    file_put_contents(__DIR__ . '/logs/sent_emails.log', "[".date('c')."] To: " . ($buyer_email ?? 'unknown') . "\nSubject: $subject\nFrom: info@fairylandcottage.com\n\n" . $message . "----\n", FILE_APPEND | LOCK_EX);
+function webhook_extract_amount_value(array $resource): string
+{
+    $candidate = trim((string) ($resource['amount']['value'] ?? ''));
+    if ($candidate !== '') {
+        return $candidate;
+    }
 
-    // PHPMailer via vendor if present
+    $candidate = trim((string) ($resource['purchase_units'][0]['amount']['value'] ?? ''));
+    if ($candidate !== '') {
+        return $candidate;
+    }
+
+    return trim((string) ($resource['purchase_units'][0]['payments']['captures'][0]['amount']['value'] ?? ''));
+}
+
+function webhook_extract_amount_currency(array $resource): string
+{
+    $candidate = strtoupper(trim((string) ($resource['amount']['currency_code'] ?? '')));
+    if ($candidate !== '') {
+        return $candidate;
+    }
+
+    $candidate = strtoupper(trim((string) ($resource['purchase_units'][0]['amount']['currency_code'] ?? '')));
+    if ($candidate !== '') {
+        return $candidate;
+    }
+
+    return strtoupper(trim((string) ($resource['purchase_units'][0]['payments']['captures'][0]['amount']['currency_code'] ?? '')));
+}
+
+function webhook_mark_event_processed(string $eventId): void
+{
+    $storePath = __DIR__ . '/logs/processed_webhook_events.log';
+    fc_ensure_directory(dirname($storePath));
+    file_put_contents($storePath, $eventId . PHP_EOL, FILE_APPEND | LOCK_EX);
+}
+
+function webhook_is_event_processed(string $eventId): bool
+{
+    $storePath = __DIR__ . '/logs/processed_webhook_events.log';
+    if (!is_file($storePath)) {
+        return false;
+    }
+
+    $handle = fopen($storePath, 'rb');
+    if ($handle === false) {
+        return false;
+    }
+
+    while (($line = fgets($handle)) !== false) {
+        if (trim($line) === $eventId) {
+            fclose($handle);
+            return true;
+        }
+    }
+
+    fclose($handle);
+    return false;
+}
+
+function webhook_send_download_email(string $buyerEmail, string $orderReference, string $bookUrl, string $audioUrl): void
+{
+    $from = 'info@fairylandcottage.com';
+    $subject = 'Your Fairyland Cottage Purchase';
+    $message = "Thank you for your purchase.\n\n";
+    $message .= "Order reference: {$orderReference}\n\n";
+    $message .= "Download your files (links expire in 1 hour):\n";
+    $message .= "- Ebook (PDF): {$bookUrl}\n";
+    $message .= "- Audiobook (WAV): {$audioUrl}\n\n";
+    $message .= "If you need fresh links, contact info@fairylandcottage.com\n";
+
+    fc_ensure_directory(__DIR__ . '/logs');
+    $logMessage = "Download email dispatched. Secure URLs redacted.\n";
+    file_put_contents(
+        __DIR__ . '/logs/sent_emails.log',
+        '[' . gmdate('c') . '] To: ' . $buyerEmail . "\nSubject: {$subject}\nFrom: {$from}\nOrder: {$orderReference}\n\n{$logMessage}----\n",
+        FILE_APPEND | LOCK_EX
+    );
+
     if (file_exists(__DIR__ . '/vendor/autoload.php')) {
         require_once __DIR__ . '/vendor/autoload.php';
+
         try {
             $mail = new PHPMailer\PHPMailer\PHPMailer(true);
-            $smtp_host = getenv('SMTP_HOST');
-            $smtp_user = getenv('SMTP_USER');
-            $smtp_pass = getenv('SMTP_PASS');
-            $smtp_port = getenv('SMTP_PORT') ?: 587;
-            $smtp_secure = getenv('SMTP_SECURE') ?: 'tls';
-            if ($smtp_host && $smtp_user && $smtp_pass) {
+            $smtpHost = getenv('SMTP_HOST') ?: '';
+            $smtpUser = getenv('SMTP_USER') ?: '';
+            $smtpPass = getenv('SMTP_PASS') ?: '';
+            $smtpPort = (int) (getenv('SMTP_PORT') ?: '587');
+            $smtpSecure = (string) (getenv('SMTP_SECURE') ?: 'tls');
+
+            if ($smtpHost !== '' && $smtpUser !== '' && $smtpPass !== '') {
                 $mail->isSMTP();
-                $mail->Host = $smtp_host;
+                $mail->Host = $smtpHost;
                 $mail->SMTPAuth = true;
-                $mail->Username = $smtp_user;
-                $mail->Password = $smtp_pass;
-                $mail->SMTPSecure = $smtp_secure;
-                $mail->Port = (int)$smtp_port;
+                $mail->Username = $smtpUser;
+                $mail->Password = $smtpPass;
+                $mail->SMTPSecure = $smtpSecure;
+                $mail->Port = $smtpPort;
             }
-            $mail->setFrom('info@fairylandcottage.com', 'Fairyland Cottage');
-            $mail->addAddress($buyer_email ?? 'unknown@example.com');
-            $mail->addBCC('info@fairylandcottage.com');
+
+            $mail->setFrom($from, 'Fairyland Cottage');
+            $mail->addAddress($buyerEmail);
+            $mail->addBCC($from);
             $mail->Subject = $subject;
             $mail->Body = $message;
             $mail->send();
-            webhook_log('PHPMailer: email sent to ' . ($buyer_email ?? 'unknown'));
-        } catch (Exception $e) {
-            webhook_log('PHPMailer error: ' . $e->getMessage());
+
+            webhook_log('Email sent via PHPMailer', ['buyer_email' => $buyerEmail, 'order_id' => $orderReference]);
+            return;
+        } catch (Throwable $exception) {
+            webhook_log('PHPMailer failed', [
+                'buyer_email' => $buyerEmail,
+                'order_id' => $orderReference,
+                'error' => $exception->getMessage(),
+            ]);
         }
+    }
+
+    if (function_exists('mail')) {
+        $headers = "From: {$from}\r\n";
+        $headers .= "Reply-To: {$from}\r\n";
+        $headers .= "Bcc: {$from}\r\n";
+        $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+
+        $sent = @mail($buyerEmail, $subject, $message, $headers);
+        webhook_log('Email attempted via mail()', [
+            'buyer_email' => $buyerEmail,
+            'order_id' => $orderReference,
+            'sent' => $sent,
+        ]);
     }
 }
 
-// Always respond 200 to PayPal unless you want retries
+if (strtoupper((string) ($_SERVER['REQUEST_METHOD'] ?? 'GET')) !== 'POST') {
+    http_response_code(405);
+    header('Allow: POST');
+    echo 'Method Not Allowed';
+    exit;
+}
+
+$skipVerify = getenv('PAYPAL_SKIP_VERIFY') === '1';
+if (PAYPAL_ENV === 'live' && $skipVerify) {
+    webhook_log('Webhook rejected: PAYPAL_SKIP_VERIFY cannot be enabled in live mode');
+    http_response_code(500);
+    exit;
+}
+
+$body = file_get_contents('php://input');
+if ($body === false || $body === '') {
+    webhook_log('Webhook rejected: empty body');
+    http_response_code(400);
+    echo 'Bad Request';
+    exit;
+}
+
+$payload = json_decode($body, true);
+if (!is_array($payload)) {
+    webhook_log('Webhook rejected: invalid JSON body');
+    http_response_code(400);
+    echo 'Bad Request';
+    exit;
+}
+
+$rawEventType = (string) ($payload['event_type'] ?? '');
+$eventType = strtoupper($rawEventType);
+$eventId = trim((string) ($payload['id'] ?? ''));
+$resource = $payload['resource'] ?? null;
+
+$requiresCompletedSchema = in_array($eventType, ['CHECKOUT.ORDER.COMPLETED', 'PAYMENT.CAPTURE.COMPLETED'], true);
+if ($requiresCompletedSchema) {
+    $resourceIsArray = is_array($resource);
+    $statusRaw = $resourceIsArray ? trim((string) ($resource['status'] ?? '')) : '';
+    $payerEmailCandidate = $resourceIsArray ? webhook_extract_payer_email($resource) : '';
+
+    if ($eventId === '' || $statusRaw === '' || $payerEmailCandidate === '') {
+        webhook_log('Malformed completed-payment webhook ignored', [
+            'event_type_raw' => $rawEventType,
+            'event_id_present' => $eventId !== '',
+            'resource_present' => $resourceIsArray,
+            'status_present' => $statusRaw !== '',
+            'payer_email_present' => $payerEmailCandidate !== '',
+        ]);
+
+        if ($eventId !== '') {
+            webhook_mark_event_processed($eventId);
+        }
+
+        http_response_code(200);
+        echo 'OK';
+        exit;
+    }
+}
+
+$headers = function_exists('getallheaders') ? getallheaders() : [];
+$transmissionId = webhook_get_header($headers, 'HTTP_PAYPAL_TRANSMISSION_ID', 'Paypal-Transmission-Id');
+$transmissionTime = webhook_get_header($headers, 'HTTP_PAYPAL_TRANSMISSION_TIME', 'Paypal-Transmission-Time');
+$certUrl = webhook_get_header($headers, 'HTTP_PAYPAL_CERT_URL', 'Paypal-Cert-Url');
+$authAlgo = webhook_get_header($headers, 'HTTP_PAYPAL_AUTH_ALGO', 'Paypal-Auth-Algo');
+$transmissionSig = webhook_get_header($headers, 'HTTP_PAYPAL_TRANSMISSION_SIG', 'Paypal-Transmission-Sig');
+$webhookId = trim((string) (getenv('PAYPAL_WEBHOOK_ID') ?: ''));
+
+if ($transmissionId === '' || $transmissionTime === '' || $certUrl === '' || $authAlgo === '' || $transmissionSig === '' || $webhookId === '') {
+    webhook_log('Webhook rejected: missing verification headers or webhook id', [
+        'transmission_id_present' => $transmissionId !== '',
+        'transmission_time_present' => $transmissionTime !== '',
+        'cert_url_present' => $certUrl !== '',
+        'auth_algo_present' => $authAlgo !== '',
+        'transmission_sig_present' => $transmissionSig !== '',
+        'webhook_id_present' => $webhookId !== '',
+    ]);
+    http_response_code(400);
+    echo 'Invalid webhook request';
+    exit;
+}
+
+try {
+    $accessToken = fc_get_paypal_access_token();
+    $verifyResponse = fc_request_paypal(
+        'POST',
+        PAYPAL_BASE_URL . '/v1/notifications/verify-webhook-signature',
+        $accessToken,
+        json_encode([
+            'auth_algo' => $authAlgo,
+            'cert_url' => $certUrl,
+            'transmission_id' => $transmissionId,
+            'transmission_sig' => $transmissionSig,
+            'transmission_time' => $transmissionTime,
+            'webhook_id' => $webhookId,
+            'webhook_event' => $payload,
+        ], JSON_UNESCAPED_SLASHES)
+    );
+
+    $verifyPayload = is_array($verifyResponse['data']) ? $verifyResponse['data'] : [];
+    $verificationStatus = strtoupper((string) ($verifyPayload['verification_status'] ?? ''));
+    if ($verificationStatus !== 'SUCCESS') {
+        webhook_log('Webhook signature verification failed', [
+            'verification_status' => $verificationStatus,
+            'verify_response' => $verifyResponse['raw'],
+        ]);
+        http_response_code(400);
+        echo 'Invalid signature';
+        exit;
+    }
+} catch (Throwable $exception) {
+    webhook_log('Webhook verification failed', ['error' => $exception->getMessage()]);
+    http_response_code(500);
+    echo 'Server Error';
+    exit;
+}
+
+if ($eventId !== '' && webhook_is_event_processed($eventId)) {
+    webhook_log('Webhook duplicate ignored', ['event_id' => $eventId]);
+    http_response_code(200);
+    echo 'OK';
+    exit;
+}
+
+$resource = is_array($resource) ? $resource : [];
+$resourceStatus = strtoupper((string) ($resource['status'] ?? ''));
+
+$isCompletedEvent =
+    ($eventType === 'PAYMENT.CAPTURE.COMPLETED' && $resourceStatus === 'COMPLETED')
+    || ($eventType === 'CHECKOUT.ORDER.COMPLETED' && $resourceStatus === 'COMPLETED');
+
+if (!$isCompletedEvent) {
+    webhook_log('Webhook event ignored: not a completed payment event', [
+        'event_id' => $eventId,
+        'event_type' => $eventType,
+        'resource_status' => $resourceStatus,
+    ]);
+
+    if ($eventId !== '') {
+        webhook_mark_event_processed($eventId);
+    }
+
+    http_response_code(200);
+    echo 'OK';
+    exit;
+}
+
+$expectedAmount = number_format((float) PRICE, 2, '.', '');
+$actualAmountRaw = webhook_extract_amount_value($resource);
+$actualAmount = $actualAmountRaw !== '' ? number_format((float) $actualAmountRaw, 2, '.', '') : '';
+if ($actualAmount === '' || $actualAmount !== $expectedAmount) {
+    webhook_log('Webhook rejected: amount mismatch', [
+        'event_id' => $eventId,
+        'event_type' => $eventType,
+        'expected_amount' => $expectedAmount,
+        'actual_amount' => $actualAmountRaw,
+    ]);
+    http_response_code(400);
+    echo 'Invalid amount';
+    exit;
+}
+
+$expectedCurrency = strtoupper(CURRENCY);
+$actualCurrency = webhook_extract_amount_currency($resource);
+if ($actualCurrency === '' || $actualCurrency !== $expectedCurrency) {
+    webhook_log('Webhook rejected: currency mismatch', [
+        'event_id' => $eventId,
+        'event_type' => $eventType,
+        'expected_currency' => $expectedCurrency,
+        'actual_currency' => $actualCurrency,
+    ]);
+    http_response_code(400);
+    echo 'Invalid currency';
+    exit;
+}
+
+$buyerEmail = filter_var(webhook_extract_payer_email($resource), FILTER_VALIDATE_EMAIL);
+
+$orderReference = trim((string) (
+    $resource['supplementary_data']['related_ids']['order_id']
+    ?? $resource['id']
+    ?? $eventId
+));
+
+if ($orderReference === '') {
+    $orderReference = 'WEBHOOK-' . strtoupper(substr(hash('sha256', $body), 0, 16));
+}
+
+try {
+    $downloadExpiry = time() + 3600;
+    $bookToken = fc_generate_download_token('book', $downloadExpiry, $orderReference);
+    $audioToken = fc_generate_download_token('audio', $downloadExpiry, $orderReference);
+
+    $bookUrl = SITE_BASE_URL . '/download.php?file=book&expires=' . $downloadExpiry . '&token=' . rawurlencode($bookToken);
+    $audioUrl = SITE_BASE_URL . '/download.php?file=audio&expires=' . $downloadExpiry . '&token=' . rawurlencode($audioToken);
+
+    if (is_string($buyerEmail) && $buyerEmail !== '') {
+        webhook_send_download_email($buyerEmail, $orderReference, $bookUrl, $audioUrl);
+    } else {
+        webhook_log('Webhook completed but no valid payer email available', [
+            'event_id' => $eventId,
+            'order_id' => $orderReference,
+        ]);
+    }
+
+    webhook_log('Webhook completed and processed', [
+        'event_id' => $eventId,
+        'event_type' => $eventType,
+        'order_id' => $orderReference,
+        'buyer_email' => $buyerEmail ?: '',
+    ]);
+} catch (Throwable $exception) {
+    webhook_log('Webhook processing failed', [
+        'event_id' => $eventId,
+        'order_id' => $orderReference,
+        'error' => $exception->getMessage(),
+    ]);
+
+    http_response_code(500);
+    echo 'Server Error';
+    exit;
+}
+
+if ($eventId !== '') {
+    webhook_mark_event_processed($eventId);
+}
+
 http_response_code(200);
-echo "OK";
+echo 'OK';

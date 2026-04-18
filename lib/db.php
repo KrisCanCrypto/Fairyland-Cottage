@@ -28,6 +28,35 @@ function init_db() {
         PRIMARY KEY(token, filename),
         FOREIGN KEY(token) REFERENCES tokens(token) ON DELETE CASCADE
     )");
+    $pdo->exec("CREATE TABLE IF NOT EXISTS processed_ipn_txns (
+        txn_id TEXT PRIMARY KEY,
+        processed_at INTEGER NOT NULL
+    )");
+}
+
+function mark_ipn_txn_processed($txn_id) {
+    $txn_id = trim((string)$txn_id);
+    if ($txn_id === '') {
+        throw new InvalidArgumentException('txn_id is required');
+    }
+
+    $pdo = get_db();
+    $stmt = $pdo->prepare('INSERT INTO processed_ipn_txns (txn_id, processed_at) VALUES (:txn_id, :processed_at)');
+
+    try {
+        $stmt->execute([
+            ':txn_id' => $txn_id,
+            ':processed_at' => time(),
+        ]);
+        return true;
+    } catch (PDOException $e) {
+        $isUniqueViolation = $e->getCode() === '23000' || str_contains($e->getMessage(), 'UNIQUE constraint failed');
+        if ($isUniqueViolation) {
+            return false;
+        }
+
+        throw $e;
+    }
 }
 
 function insert_token_with_files($token, $email, $expiry, $files_map) {

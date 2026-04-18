@@ -1,6 +1,23 @@
 <?php
 declare(strict_types=1);
 
+$allowedIpsEnv = getenv('DIAGNOSTICS_ALLOWED_IPS');
+$clientIp = (string) ($_SERVER['REMOTE_ADDR'] ?? '');
+
+if ($allowedIpsEnv === false || trim($allowedIpsEnv) === '') {
+    http_response_code(404);
+    exit;
+}
+
+$allowedIps = array_values(array_filter(array_map('trim', explode(',', $allowedIpsEnv)), static function (string $ip): bool {
+    return $ip !== '';
+}));
+
+if ($clientIp === '' || !in_array($clientIp, $allowedIps, true)) {
+    http_response_code(404);
+    exit;
+}
+
 header('Content-Type: text/html; charset=UTF-8');
 
 function respond(int $code, string $message): void {
@@ -168,7 +185,9 @@ $checks = [
         'smtp_host_set' => getenv('SMTP_HOST') ? true : false,
         'smtp_user_set' => getenv('SMTP_USER') ? true : false,
         'smtp_pass_set' => getenv('SMTP_PASS') ? true : false,
-        'paypal_mode' => getenv('PAYPAL_MODE') ?: '(unset)',
+        'paypal_env' => getenv('PAYPAL_ENV') ?: '(unset)',
+        'paypal_mode_legacy' => getenv('PAYPAL_MODE') ?: '(unset)',
+        'download_secret_set' => getenv('DOWNLOAD_SECRET') ? true : false,
         'paypal_webhook_id_set' => getenv('PAYPAL_WEBHOOK_ID') ? true : false,
     ],
     'logs' => [
